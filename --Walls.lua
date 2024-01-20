@@ -6,7 +6,7 @@ end
 local translations = {
     ['br'] = {
         warning = "ATENÇÃO",
-        welcome = "<Rose>Bem-vindo(a) ao minigame <J>#walls</ROSE>.<VP><CE><BR>Neste minigame você terá que tomar cuidado para não cair com o meep de seus oponentes. Se quiser vencer, derrube-os e seja o ultimo rato vivo!<BR><ROSE>Cuidado com as paredes! Explosões também surgirão ao decorrer do tempo!<BR><J>Envie seus mapas neste tópico:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><CH>Conceito original: Hugotitas.",
+        welcome = "<Rose>Bem-vindo(a) ao minigame <J>#walls</ROSE>.<VP><CE><BR>Neste minigame você terá que tomar cuidado para não cair com o meep de seus oponentes. Se quiser vencer, derrube-os e seja o ultimo rato vivo!<BR><ROSE>Cuidado com as paredes! Explosões também surgirão ao decorrer do tempo!<BR><J>Envie seus mapas neste tópico:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
         tribe = "\n\n\n<J><p align='center'>Tribo: </J><BL>",
         rounds = "</BL></p></J>\n\n\n<font size='17'>Rodadas jogadas: <V>",
         wons = "</V>\nRodadas vencidas: <V>",
@@ -16,7 +16,7 @@ local translations = {
     },
     ['en'] = {
         warning = "WARNING",
-        welcome = "<ROSE>Welcome to <J>#walls.</J><VP><CE><BR>In this minigame you will have to be careful not to fall by your opponents' meep. If you want to win, be the last mouse alive! <BR> <ROSE> Watch out for the walls! Explosions will appear over time! <BR> <J> Submit your maps in this topic:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><CH>Original concept: Hugotitas",
+        welcome = "<ROSE>Welcome to <J>#walls.</J><VP><CE><BR>In this minigame you will have to be careful not to fall by your opponents' meep. If you want to win, be the last mouse alive! <BR> <ROSE> Watch out for the walls! Explosions will appear over time! <BR> <J> Submit your maps in this topic:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
         tribe = "\n\n\n<J><p align='center'>Tribe: </J><BL>",
         rounds = "</BL></p></J>\n\n\n<font size='17'>Rounds played: <V>",
         wons = "</V>\nRounds won: <V>",
@@ -26,7 +26,7 @@ local translations = {
     },
     ['fr'] = {
         warning = "ATTENTION",
-        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><CH>concept original: Hugotitas",
+        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
         tribe = "\n\n\n<J><p align='center'>Tribu: </J><BL>",
         rounds = "</BL></p></J>\n\n\n<font size='17'>Parties jouées: <V>",
         wons = "</V>\nParties gagnées: <V>",
@@ -158,8 +158,8 @@ function eventPlayerDied(name)
         tfm.exec.giveCheese(winner)
         tfm.exec.playerVictory(winner)
         tfm.exec.setGameTime(3)
-        tfm.exec.chatMessage("<J>" ..winner.. " won!</J>")
-        
+        tfm.exec.chatMessage("<J>" ..winner.. " won")
+
     elseif #alivePlayers == 0 then
         tfm.exec.setGameTime(3)
         tfm.exec.newGame(maps[math.random(#maps)])
@@ -209,11 +209,11 @@ end
             xex = math.random(w1, x)
             yex = math.random(0, 380)
             tfm.exec.explosion(xex, yex, 50, 100, true)
-            tfm.chatMessage("<ROSE>Explosions have been added!</ROSE>")
             tfm.exec.displayParticle(12,xex,yex)
             run = os.time();
         end
     end
+    
     if t <= 1000 then
         tfm.exec.setGameTime(max_time)
         for k, v in next,
@@ -224,8 +224,6 @@ end
     end
     
     if t >= 105000 then
-        ui.removeTextArea(50, nil)
-        ui.removeTextArea(51, nil)
         if time < os.time()-500 then
             ui.addTextArea(99, "", nil, x1, -576, w, 1360, 0x6a7495, 0x6a7495, 1, true)
             w = w+5
@@ -262,10 +260,11 @@ end
 
 function eventChatCommand(name, cmd)
     local arg = split(cmd, " ")
+
     if arg[1] == "help"  then
-      help(name)
+        help(name)
     elseif arg[1] == "snow" then
-        tfm.exec.snow(0, 1) 
+        tfm.exec.snow(0, 1)
     end
 
     if mod[name] then
@@ -302,30 +301,30 @@ function eventChatCommand(name, cmd)
             elseif arg[1] == "commands" then
                 admHelp(name)
             
-            elseif arg[1] == "ms" then 
-                tfm.exec.chatMessage(arg[2], nil)
+            elseif arg[1] == "ms" then
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>"..table.concat(arg," ", 2), nil)
 
             elseif arg[1] == "maxplayers" and tonumber(arg[2]) <=50 then
                 tfm.exec.setRoomMaxPlayers(arg[2])
             
             elseif arg[1] == "maxplayers" and tonumber(arg[2]) > 50 then
-                tfm.exec.chatMessage("max is 50 noob", adm[name])
+                tfm.exec.chatMessage("max is 50 noob", name)
 
             elseif arg[1] == "respawn" and arg[2] ~= nil then
-                    tfm.exec.respawnPlayer(arg[2])
-                    tfm.exec.chatMessage("!Player: " ..arg[2].. "respawned!", adm[name] and mod[name])
+                tfm.exec.respawnPlayer(arg[2])
+                tfm.exec.chatMessage("<Vi>!Player: " ..arg[2].. " respawned by: " ..name, adm[name] and mod[name])
 
             elseif arg[1] == "time" and tonumber(arg[2]) ~= nil then
-                    tfm.exec.setGameTime(arg[2], true)
+                tfm.exec.setGameTime(arg[2], true)
 
             elseif arg[1] == "time" and tonumber(arg[2]) == nil then
-                tfm.exec.chatMessage("invalig args noob", adm[name])
+                tfm.exec.chatMessage("Invalig args noob", name)
 
             elseif arg[1] == "link" and arg[2] ~= nil and arg[3] ~= nil and arg[3] ~= arg[2] then
-                    tfm.exec.linkMice(arg[2], arg[3], true)
+                tfm.exec.linkMice(arg[2], arg[3], true)
 
             elseif arg[1] == "unlink" and arg[2] ~= nil and arg[3] ~= nil then
-                    tfm.exec.linkMice(arg[2], arg[3], false)    
+                tfm.exec.linkMice(arg[2], arg[3], false)    
         end            
     end 
 end
@@ -360,12 +359,12 @@ function eventTextAreaCallback(id, name, link)
 end
 
 function admHelp(playerName) 
-    tfm.exec.chatMessage("<R>Admin commands</R>\n !commands to show available adm commands\n !map or !map [mapcode] - load an official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n !freeze [player] - freezes a player\n !size [player] [number 1 - 5] or [random] - gives the player a random or a given size\n !ms - Chat message\n !maxplayers [1 - 50] - set max players in the room\n !respawn [player] - respawn a player\n !time [number] - change maps time\n !link or !unlink [player1] [player2] - link or unlink two players\n", playerName)
+    tfm.exec.chatMessage("<R>Admin commands</R>\n <J>!commands - to show available adm commands\n !map or !map [mapcode] - load an official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n !freeze [player] - freezes a player\n !size [player] [number 1 - 5] or [random] - gives the player a random or a given size\n !ms - Chat message\n !maxplayers [1 - 50] - set max players in the room\n !respawn [player] - respawn a player\n !time [number] - change maps time\n !link or !unlink [player1] [player2] - link or unlink two players\n", playerName)
 end
 
 
 function modHelp(playerName) 
-    tfm.exec.chatMessage("<VI>Mod commands</VI>\n !command to show available mod commands\n !map or !map [mapcode] - load a official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n" , playerName) 
+    tfm.exec.chatMessage("<VI>Mod commands</VI>\n <J>!commands - to show available mod commands\n !map or !map [mapcode] - load a official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n" , playerName) 
 end
 
 
