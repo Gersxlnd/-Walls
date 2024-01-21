@@ -184,7 +184,7 @@ function eventLoop(t, r)
             tfm.exec.chatMessage(translate(k, 'warning2'), k)
         end)
     end
-    if t >= 60000 and t <= 65000 or t >= 100000 and t <= 105000 then
+    if t >= 60000 and t <= 65000 then
         if tempo<os.time()-contagem then
             table.foreach(tfm.get.room.playerList, function(k)
             if s == 1 then
