@@ -7,43 +7,49 @@ local translations = {
     ['br'] = {
         warning = "ATENÇÃO",
         welcome = "<Rose>Bem-vindo(a) ao minigame <J>#walls</ROSE>.<VP><CE><BR>Neste minigame você terá que tomar cuidado para não cair com o meep de seus oponentes. Se quiser vencer, derrube-os e seja o ultimo rato vivo!<BR><ROSE>Cuidado com as paredes! Explosões também surgirão ao decorrer do tempo!<BR><J>Envie seus mapas neste tópico:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
-        tribe = "\n\n\n<J><p align='center'>Tribo: </J><BL>",
-        rounds = "</BL></p></J>\n\n\n<font size='17'>Rodadas jogadas: <V>",
-        wons = "</V>\nRodadas vencidas: <V>",
         warning1 = "<ROSE>Explosões foram adicionadas!</ROSE>",
         warning2 = "<ROSE>As paredes ficaram mais rápidas</ROSE>!",
         close_p = "Fechar",
+        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Ajuda<b>",
+        help_2 = "<p align = 'center'><VP>  Bem vindo ao<BV> #Walls<VP>! \n Neste minigame você tem que estar atento aos meeps dos oponentes.<br><br>Se você quer ganhar, derrote seus oponentes e seja o ultimo rato vivo! <br> <br><ROSE>#Walls</ROSE><J> é um module de código aberto. Se você quiser contribuir, cheque o nosso repositorio github.com/Gersxlnd/-Walls <br><br><ROSE>Fique atento com as paredes! <br><br>Explosões também surgirão conforme você avança!<CS> <br> <br> Criado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> & <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>"
     },
     ['en'] = {
         warning = "WARNING",
         welcome = "<ROSE>Welcome to <J>#walls.</J><VP><CE><BR>In this minigame you will have to be careful not to fall by your opponents' meep. If you want to win, be the last mouse alive! <BR> <ROSE> Watch out for the walls! Explosions will appear over time! <BR> <J> Submit your maps in this topic:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
-        tribe = "\n\n\n<J><p align='center'>Tribe: </J><BL>",
-        rounds = "</BL></p></J>\n\n\n<font size='17'>Rounds played: <V>",
-        wons = "</V>\nRounds won: <V>",
         warning1 = "<ROSE>Explosions have been added!</ROSE>",
         warning2 = "<ROSE>Walls became faster!</ROSE>",
         close_p = "Close",
+        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Help<b>",
+        help_2 = "<p align = 'center'> <VP>  Welcome to the<BV> #Walls<VP>! \n In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <br><ROSE>#Walls</ROSE><J> is an open source module. If you want to contribute check our repository github.com/Gersxlnd/-Walls <br><br><ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000.<CS><J>"
+
     },
     ['fr'] = {
         warning = "ATTENTION",
         welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
-        tribe = "\n\n\n<J><p align='center'>Tribu: </J><BL>",
-        rounds = "</BL></p></J>\n\n\n<font size='17'>Parties jouées: <V>",
-        wons = "</V>\nParties gagnées: <V>",
         warning1 = "<ROSE>Les explosions ont été ajoutées!</ROSE>",
         warning2 = "<ROSE>Les murs sont devenus plus rapides!</ROSE>", 
         close_p = "Fermer",
+        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Help<b>",
+        help_2 = "<p align = 'center'> <VP>  Bienvenue dans<BV> #Walls<VP>! \n Dans ce mini-jeu vous devez faire attention aux meep de vos adversaires. <br><br>Si vous voulez gagner, battez vos adversaires et soyez la dernière souris en vie ! <br> <br><ROSE>#Walls</ROSE><J> est un module open source. Si vous voulez contribuer, allez voir notre répertoire : github.com/Gersxlnd/-Walls <br><br><ROSE>Attention aux murs ! <br><br>Des explosions vont se produire au fur et à mesure! <CS> <br> <br> Créé par : <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> et <R>Rianmojang1#0000<CS>.<CS> <br> <br > Crédits: <R> Hugotitas#0000.<CS><J>"
     },
     ['es'] = {
         warning = "PELIGRO",
         welcome = "<Rose>Bienvenido(a), al minijuego <J>#walls<Rose>.<VP><CE><BR>En este minijuego tendrás que tener cuidado, podrías caer por el meep de tu oponente. ¡Si quieres ganar, derríbalo y sé el último ratón vivo!<BR><ROSE>¡Cuidado con las paredes! ¡Explotarán cada cierto tiempo!<BR><J>Envía tus mapas a este hilo:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
-        tribe = "\n\n\n<J><p align='center'>Tribu: </J><BL>",
-        rounds = "</BL></p></J>\n\n\n<font size='17'>Rondas jugadas: <V>",
-        wons = "</V>\nRondas ganadas: <V>",
         warning1 = "<ROSE>¡Las explosiones empezaron!</ROSE>",
         warning2 = "<ROSE>¡Las paredes serán más rápidas</ROSE>!",
         close_p = "Cerrar",
-    }
+        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Ayuda<b>",
+        help_2 = "<p align = 'center'> <VP>  ¡Bienvenido a<BV> #Walls<VP>! \n En este minijuego debes tener cuidado con los meeps de tus oponentes..<br><br>Si quieres ganar, derrotar a tus oponentes y ser el último ratón vivo! <br> <br><ROSE>#Walls</ROSE><J>  es un código fuente abierto. Si quieres contribuir, consulta nuestro repositorio github.com/ Gersxlnd /-Walls <br><br><ROSE>¡Cuidado con las paredes! <br><br>¡También surgirán explosiones a medida que avanzas!<CS> <br> <br> Creado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>"
+    },
+    ['tr'] = {
+        warning = "UYARI",
+        welcome = "<ROSE>Hoş geldiniz <J>#walls.</J><VP><CE><BR> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <BR> <ROSE> Duvarlara dikkat edin! Patlamalar zamanla ortaya çıkacak! <BR> <J>Haritalarınızı bu konu başlığına gönderin:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        warning1 = "<ROSE>Patlamalar eklendi!</ROSE>",
+        warning2 = "<ROSE>Duvarlar daha hızlı halde!</ROSE>",
+        close_p = "Kapat",
+        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Yardım<b>",
+        help_2 = "<p align = 'center'> <VP><BV> #Walls'a<VP> Hoş geldiniz<VP>! \n <br><br> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <br> <br><ROSE>#Walls</ROSE><J> açık kaynak kodudur. Katkıda bulunmak istiyorsanız kaynağımıza göz atın github.com/Gersxlnd/-Walls <br><br><ROSE> Duvarlara dikkat edin! <br><br> Siz ilerledikçe patlamalar da ortaya çıkacak!<CS> <br> <br>Tarafından oluşturuldu: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> ve <R>Rianmojang1#0000<CS>.<CS> <br> <br > Katkıda bulunanlar: <R> Hugotitas#0000.<CS><J>"
+    },
 }
 
 system.disableChatCommandDisplay(cmd, true)
@@ -63,7 +69,7 @@ local players = {}
 isBonusTaken = false
 local adm = {["Rafapkzz#8588"] = true,["Brsowl#0000"] = true,["Rianmojang1#0000"] = true, ["Ghost#6398"] = true, ["Lays#1146"] =true}
 
-local mod = {["Artsyemir#0000"] = true, ["Tsohg#1253"]= true}
+local mod = {["Artsyemir#0000"] = true, ["Tsohg#1253"]= true, ["Potjkb#0000"] = true}
 
 local maps = {
     7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735,  7506902, 7937063, 7946764, 7946765,7947711,7947712,7947713,7947714,7506270, 7506352, 7506584, 7506587, 7507050, 7508721,
@@ -86,7 +92,6 @@ local powers = {
         tfm.exec.giveTransformations(playerName, true) 
     end,
 
-   
 }
 
 function addBonus()
@@ -263,9 +268,24 @@ function eventChatCommand(name, cmd)
 
     if arg[1] == "help"  then
         help(name)
+
     elseif arg[1] == "snow" then
         tfm.exec.snow(0, 1)
+
+    elseif arg[1] == "langue" then
+        if arg[2] then
+            arg[2] = arg[2]:lower()
+    
+            if not data[name] then
+                data[name] = {}
+            end
+    
+            data[name].lang = (translations[arg[2]] and arg[2] or data[name].lang)
+            tfm.exec.chatMessage("<J>You changed your default language to: "..arg[2], name)
+        end
     end
+    
+ 
 
     if mod[name] then
             if arg[1] == "map" and arg[2] ~= nil then
@@ -279,12 +299,16 @@ function eventChatCommand(name, cmd)
 
             elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
                 tfm.exec.killPlayer(arg[2])
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name] and name)
+
         end
     end
 
     if adm[name] then
             if arg[1] == "freeze" and arg[2] ~= nil then 
                 tfm.exec.freezePlayer(arg[2], true, true)
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got freezed by: " ..name, adm[name])
+
             
             elseif arg[1] == "map" and arg[2] ~= nil then
                 tfm.exec.newGame(arg[2])
@@ -294,6 +318,7 @@ function eventChatCommand(name, cmd)
             
             elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
                 tfm.exec.killPlayer(arg[2])
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name])
 
             elseif arg[1] == "size" and arg[2] ~= nil and arg[3] then
                 tfm.exec.changePlayerSize(arg[2], arg[3])
@@ -306,9 +331,10 @@ function eventChatCommand(name, cmd)
 
             elseif arg[1] == "maxplayers" and tonumber(arg[2]) <=50 then
                 tfm.exec.setRoomMaxPlayers(arg[2])
+                tfm.exec.chatMessage("<VI> Room limite is now: " ..arg[2],adm[name] and mod[name])
             
             elseif arg[1] == "maxplayers" and tonumber(arg[2]) > 50 then
-                tfm.exec.chatMessage("max is 50 noob", name)
+                tfm.exec.chatMessage("<J>max is 50 noob", name)
 
             elseif arg[1] == "respawn" and arg[2] ~= nil then
                 tfm.exec.respawnPlayer(arg[2])
@@ -318,55 +344,25 @@ function eventChatCommand(name, cmd)
                 tfm.exec.setGameTime(arg[2], true)
 
             elseif arg[1] == "time" and tonumber(arg[2]) == nil then
-                tfm.exec.chatMessage("Invalig args noob", name)
+                tfm.exec.chatMessage("<J>Invalid args noob", name)
 
             elseif arg[1] == "link" and arg[2] ~= nil and arg[3] ~= nil and arg[3] ~= arg[2] then
                 tfm.exec.linkMice(arg[2], arg[3], true)
 
             elseif arg[1] == "unlink" and arg[2] ~= nil and arg[3] ~= nil then
-                tfm.exec.linkMice(arg[2], arg[3], false)    
+                tfm.exec.linkMice(arg[2], arg[3], false) 
         end            
     end 
 end
 
 
-
-function sendMenu(id, text, target, x, y, width, height, alpha)
-    ui.addTextArea(id, '', target, x+-2, y+18, width+24, height+14, 0x2E221B, 0x2E221B, alpha)
-    ui.addTextArea(id+1, '', target, x+-1, y+19, width+22, height+12, 0x986742, 0x986742, alpha)
-    ui.addTextArea(id+2, '', target, x+2, y+22, width+16, height+6, 0x171311, 0x171311, alpha)
-    ui.addTextArea(id+3, '', target, x+3, y+23, width+14, height+4, 0x0C191C, 0x0C191C, alpha)
-    ui.addTextArea(id+4, '', target, x+4, y+24, width+12, height+2, 0x24474D, 0x24474D, alpha)
-    ui.addTextArea(id+5, '', target, x+5, y+25, width+10, height+0, 0x183337, 0x183337, alpha)
-    ui.addTextArea(id+6, text, target, x+6, y+26, width+8, height+-2, 0x122528, 0x122528, alpha)
-    ui.addTextArea(id+7, '', target, x+15, y+height-20+25, width-10, 15, 0x5D7D90, 0x5D7D90, alpha)
-    ui.addTextArea(id+8, '', target, x+15, y+height-20+27, width-10, 15, 0x11171C, 0x11171C, alpha)
-    ui.addTextArea(id+9, '<p align="center"><a href="event:close@'..id..'"><N>'..translate(target, 'close_p')..'</a>', target, x+15, y+height-20+26, width-10, 15, 0x3C5064, 0x3C5064, alpha)
-end
-
-function closeMenu(id, name)
-    for i = id, id + 9 do
-        ui.removeTextArea(i, name)
-    end
-end
-
-function eventTextAreaCallback(id, name, link)
-    if link:sub(0,5) == 'close' then
-        id = link:sub(7)
-        closeMenu(id, name)
-        ui.removeTextArea(90, name)
-    end
-end
-
 function admHelp(playerName) 
     tfm.exec.chatMessage("<R>Admin commands</R>\n <J>!commands - to show available adm commands\n !map or !map [mapcode] - load an official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n !freeze [player] - freezes a player\n !size [player] [number 1 - 5] or [random] - gives the player a random or a given size\n !ms - Chat message\n !maxplayers [1 - 50] - set max players in the room\n !respawn [player] - respawn a player\n !time [number] - change maps time\n !link or !unlink [player1] [player2] - link or unlink two players\n", playerName)
 end
 
-
 function modHelp(playerName) 
     tfm.exec.chatMessage("<VI>Mod commands</VI>\n <J>!commands - to show available mod commands\n !map or !map [mapcode] - load a official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n" , playerName) 
 end
-
 
 tfm.exec.setRoomMaxPlayers(25)
 
@@ -374,17 +370,22 @@ function eventNewGame(name)
 isBonusTaken = false
 
 
-w = 4
-w1 = 4
-x = 792
-x1 = 4
-ui.removeTextArea(50, nil)
-ui.removeTextArea(51, nil)
-ui.removeTextArea(99, nil)
-ui.removeTextArea(100, nil)
-addBonus()
+    w = 4
+    w1 = 4
+    x = 792
+    x1 = 4 
+    ui.removeTextArea(50, nil)
+    ui.removeTextArea(51, nil)
+    ui.removeTextArea(99, nil)
+    ui.removeTextArea(100, nil)
+    ui.removeTextArea(0, nil)
+    ui.removeTextArea(1, nil)
+    ui.removeTextArea(2, nil)
+    ui.removeTextArea(3, nil)
+    ui.removeTextArea(4, nil)
+    addBonus()
 
-ui.addTextArea(10001,"",nil,-244,-18,252,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10002,"",nil,805,-6,242,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10003,"",nil,-481,-185,1532,200,0x6A7495,0x6A7495,1,true)ui.addTextArea(10004,"",nil,-467,413,1532,283,0x6A7495,0x6A7495,1,true)
+    ui.addTextArea(10001,"",nil,-244,-18,252,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10002,"",nil,805,-6,242,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10003,"",nil,-481,-185,1532,200,0x6A7495,0x6A7495,1,true)ui.addTextArea(10004,"",nil,-467,413,1532,283,0x6A7495,0x6A7495,1,true)
 
     for playerName, playerData in pairs(tfm.get.room.playerList) do
         tfm.exec.linkMice(playerName, playerName, false)
@@ -418,37 +419,10 @@ function eventTextAreaCallback(id, nick, call)
 end
 
 function help(name)
-  
-    if tfm.get.room.playerList[name].community == "br" then
-            ui.addTextArea(0, "", name, 235, 60, 320, 260, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(1, "<p align='center'><font size ='18' color='#00C17C'>Ajuda<b>", name, 360, 60, 90, 25, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, 60, 88, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, 60, 60, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(4, "<p align='center'><VP> Bem-vindo(a) ao minigame <BV>#Walls<VP>! <br><br>Neste minigame você terá que tomar cuidado com o meep de seus oponentes.<br><br>Se quiser vencer, derrote seus oponentes e seja o ultimo rato vivo!<br><ROSE>Cuidado com as paredes! <br><br>Explosões também surgirão ao decorrer do tempo!<CS> <br><br>Criado por: <R>Rafapkzz#8588<CS>, <R>Brsowl#0000<CS> e <R>Rianmojang1#0000<CS>.<br><br>Créditos: <R>Hugotitas#0000<CS>.", name, 248, 100, 300, 265, 0, 0, 0, true)
-    elseif tfm.get.room.playerList[name].community == "es" then
-            ui.addTextArea(0, "", name, 235, 60, 320, 260, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(1, "<p align='center'><font size ='18' color='#00C17C'>Ayuda<b>", name, 360, 60, 90, 25, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, 60, 88, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, 60, 60, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(4, "<p align='center'><VP> ¡Bienvenido al minijuego <BV>#Walls<VP>! <br><br>En este minijuego, debes tener cuidado con los meep de tus oponentes.<br><br>¡Si quieres ganar, derrota a tus oponentes y sé el último ratón vivo!<br><ROSE>¡Cuidado con los muros!! <br><br>¡Las explosiones también aparecerán con el tiempo!<CS> <br><br>Creado por: <R>Rafapkzz#8588<CS>, <R>Brsowl#0000<CS> e <R>Rianmojang1#0000<CS>.<br><br>Créditos: <R>Hugotitas#0000<CS>.", name, 248, 100, 300, 265, 0, 0, 0, true)
-     elseif tfm.get.room.playerList[name].community == "pl" then
-            ui.addTextArea(0, "", name, 235, 60, 320, 260, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(1, "<p align='center'><font size ='18' color='#00C17C'>Pomoc<b>", name, 360, 60, 90, 25, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, 60, 88, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, 60, 60, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(4, "<p align='center'><VP> Witamy w <BV>#Walls<VP>! <br><br>W tej minigrze musisz uważać na meepów przeciwników.<br><br>Jeśli chcesz wygrać, pokonaj przeciwników i zostań ostatnią żywą myszą!<br><br><ROSE>Uważaj na ściany!<br>Z czasem dojdzie do eksplozji!<CS> <br><br>Utworzono: <R>Rafapkzz#8588<CS>, <R>Brsowl#0000<CS> i <R>Rianmojang1#0000<CS>.<br><br>Kredyty: <R>Hugotitas#0000<CS>.", name, 248, 100, 300, 265, 0, 0, 0, true)
-    elseif tfm.get.room.playerList[name].community == "tr" then
-            ui.addTextArea(0, "", name, 235, 60, 320, 260, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(1, "<p align='center'><font size ='18' color='#00C17C'>YARDIM<b>", name, 360, 60, 90, 25, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, 60, 88, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, 60, 60, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea (4, "<p align = 'center'> <BV> #Walls'a <VP> Hoş Geldiniz<VP>! <br><br> Bu mini oyunda rakiplerinizin Meep gücüne kapılmamak için dikkatli olmalısın.<br><br>Eğer kazanmak istiyorsan, rakiplerini yenilgiye uğrat ve hayatta kalan son fare ol!. <br> <ROSE>Duvarlara dikkat et! <br><br>Bir süre içinde duvarlar daralacak!<CS> <br> <br> Oluşturanlar: <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> ve <R>Rianmojang1#0000<CS>.<br> <br > Katkıda bulunanlar: <R> Hugotitas#0000<CS>. ", name, 248, 100, 300, 265, 0, 0, 0, true)
-    else
-            ui.addTextArea(0, "", name, 235, 60, 320, 260, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(1, "<p align='center'><font size ='18' color='#00C17C'>Help<b>", name, 360, 60, 90, 25, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, 60, 88, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, 60, 60, 20, 0x073247, 0x121212, 1, true)
-            ui.addTextArea (4, "<p align = 'center'> <VP> Welcome to the<BV> #Walls<VP>! <br><br> In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000<CS>. ", name, 248, 100, 300, 265, 0, 0, 0, true)
-
-    end
+    local textArea_y = 50
+    ui.addTextArea(0, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(1, translate(name, "help_1"), name, 360, textArea_y, 90, 25, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, textArea_y, 88, 20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60, 20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea (4,translate(name, "help_2"), name, 248, 100, 300, 265, 0, 0, 0, true)
 end
