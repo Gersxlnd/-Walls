@@ -1,4 +1,4 @@
---[[Walls]]  
+--[[Walls]]
 for _,f in next,{"AutoShaman","AutoScore","AutoNewGame","AutoTimeLeft","MinimalistMode","PhysicalConsumables","AfkDeath"} do
             tfm.exec["disable"..f]()
 end
@@ -6,72 +6,76 @@ end
 local translations = {
     ['br'] = {
         warning = "ATENÇÃO",
-        welcome = "<Rose>Bem-vindo(a) ao minigame <J>#walls</ROSE>.<VP><CE><BR>Neste minigame você terá que tomar cuidado para não cair com o meep de seus oponentes. Se quiser vencer, derrube-os e seja o ultimo rato vivo!<BR><ROSE>Cuidado com as paredes! Explosões também surgirão ao decorrer do tempo!<BR><J>Envie seus mapas neste tópico:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        welcome = "<Rose>Bem-vindo(a) ao minigame <J>#walls</ROSE>.<VP><CE><BR>Neste minigame você terá que tomar cuidado para não cair com o meep de seus oponentes. Se quiser vencer, derrube-os e seja o ultimo rato vivo!<BR><ROSE>Cuidado com as paredes! Explosões também surgirão ao decorrer do tempo!<BR><J>Envie seus mapas neste tópico:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1.<BR><PT>Digite !help para ver mais informações",
         warning1 = "<ROSE>Explosões foram adicionadas!</ROSE>",
         warning2 = "<ROSE>As paredes ficaram mais rápidas</ROSE>!",
         close_p = "Fechar",
-        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Ajuda<b>",
+        help_1 = "<p align='center'><font size ='14' color='#00C17C'>Ajuda<b>",
         help_2 = "<p align = 'center'><VP>  Bem vindo ao<BV> #Walls<VP>! \n Neste minigame você tem que estar atento aos meeps dos oponentes.<br><br>Se você quer ganhar, derrote seus oponentes e seja o ultimo rato vivo! <br> <br><ROSE>#Walls</ROSE><J> é um module de código aberto. Se você quiser contribuir, cheque o nosso repositorio github.com/Gersxlnd/-Walls <br><br><ROSE>Fique atento com as paredes! <br><br>Explosões também surgirão conforme você avança!<CS> <br> <br> Criado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> & <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
         mapList = "Lista de map atual: ",
         translation_ = "Você mudou seu idioma padrão para: ",
         won = " ganhou!",
-        noWon = "<J>Ninguem ganhou!",
+        noWon = "<J>Ninguém ganhou!",
+        commands = "<VI>Commandos</VI> <br><br><BV>!help -</BV>  <J> isso mostra a aba de ajuda. </J> <br><br><BV>!snow -</BV> <J> remove neve se houver </J><br><br><BV>!langue [região] -</BV> <J> mude seu idioma para o idioma selecionado. </J><br><br><BV>!maplist -</BV> <J> é enviado uma lista dos maps oficiais do #Walls para você.</J>",
     },
     ['en'] = {
         warning = "WARNING",
-        welcome = "<ROSE>Welcome to <J>#walls.</J><VP><CE><BR>In this minigame you will have to be careful not to fall by your opponents' meep. If you want to win, be the last mouse alive! <BR> <ROSE> Watch out for the walls! Explosions will appear over time! <BR> <J> Submit your maps in this topic:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        welcome = "<ROSE>Welcome to <J>#walls.</J><VP><CE><BR>In this minigame you will have to be careful not to fall by your opponents' meep. If you want to win, be the last mouse alive! <BR> <ROSE> Watch out for the walls! Explosions will appear over time! <BR> <J> Submit your maps in this topic:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><PT>Type !help to see more informations",
         warning1 = "<ROSE>Explosions have been added!</ROSE>",
         warning2 = "<ROSE>Walls became faster!</ROSE>",
         close_p = "Close",
-        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Help<b>",
-        help_2 = "<p align = 'center'> <VP>  Welcome to the<BV> #Walls<VP>! \n In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <br><ROSE>#Walls</ROSE><J> is an open source module. If you want to contribute check our repository github.com/Gersxlnd/-Walls <br><br><ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000.<CS><J>",
+        help_1 = "<p align='center'><font size ='14' color='#00C17C'>Help<b>",
+        help_2 = "<p align = 'center'> <VP>  Welcome to the<BV> #Walls<VP>! \n <br> In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <br><ROSE>#Walls</ROSE><J> is an open source module. If you want to contribute check our repository github.com/Gersxlnd/-Walls <br><br><ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000.<CS><J>",
         mapList = "Current map list: ",
         translation_ = "You changed your default language to: ",
         won = " won!",
         noWon = "<J>No one won!",
+        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> it will show you a help tab. </J> <br><br><BV>!snow -</BV> <J> it removes snow if there is any </J><br><br><BV>!langue [region] -</BV> <J> changes your language to the selected one. </J><br><br><BV>!maplist -</BV> <J>you will get the official map list of #Walls.</J>",
 
     },
     ['fr'] = {
         warning = "ATTENTION",
-        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><PT>Type !help to see more informations",
         warning1 = "<ROSE>Les explosions ont été ajoutées!</ROSE>",
         warning2 = "<ROSE>Les murs sont devenus plus rapides!</ROSE>", 
         close_p = "Fermer",
-        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Aide<b>",
-        help_2 = "<p align = 'center'> <VP>  Bienvenue dans<BV> #Walls<VP>! \n Dans ce mini-jeu vous devez faire attention aux meep de vos adversaires. <br><br>Si vous voulez gagner, battez vos adversaires et soyez la dernière souris en vie ! <br> <br><ROSE>#Walls</ROSE><J> est un module open source. Si vous voulez contribuer, allez voir notre répertoire : github.com/Gersxlnd/-Walls <br><br><ROSE>Attention aux murs ! <br><br>Des explosions vont se produire au fur et à mesure! <CS> <br> <br> Créé par : <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> et <R>Rianmojang1#0000<CS>.<CS> <br> <br > Crédits: <R> Hugotitas#0000.<CS><J>",
+        help_1 = "<p align='center'><font size ='14' color='#00C17C'>Aide<b>",
+        help_2 = "<p align = 'center'> <VP>  Bienvenue dans<BV> #Walls<VP>! \n <br> Dans ce mini-jeu vous devez faire attention aux meep de vos adversaires. <br><br>Si vous voulez gagner, battez vos adversaires et soyez la dernière souris en vie ! <br> <br><ROSE>#Walls</ROSE><J> est un module open source. Si vous voulez contribuer, allez voir notre répertoire : github.com/Gersxlnd/-Walls <br><br><ROSE>Attention aux murs ! <br><br>Des explosions vont se produire au fur et à mesure! <CS> <br> <br> Créé par : <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> et <R>Rianmojang1#0000<CS>.<CS> <br> <br > Crédits: <R> Hugotitas#0000.<CS><J>",
         mapList = "Liste des cartes actuelles: ",
         translation_ = "Votre nouvelle langue par défaut est : ",
         won = " a gagné!",
-        noWon = "<J>Personne n'a gagné!", 
+        noWon = "<J>Personne n'a gagné!",
+        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> it will show you a help tab. </J> <br><br><BV>!snow -</BV> <J> it removes snow if there is any </J><br><br><BV>!langue [region] -</BV> <J> changes your language to the selected one. </J><br><br><BV>!maplist -</BV> <J>you will get the official map list of #Walls.</J>",
     },
     ['es'] = {
         warning = "PELIGRO",
-        welcome = "<Rose>Bienvenido(a), al minijuego <J>#walls<Rose>.<VP><CE><BR>En este minijuego tendrás que tener cuidado, podrías caer por el meep de tu oponente. ¡Si quieres ganar, derríbalo y sé el último ratón vivo!<BR><ROSE>¡Cuidado con las paredes! ¡Explotarán cada cierto tiempo!<BR><J>Envía tus mapas a este hilo:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        welcome = "<Rose>Bienvenido(a), al minijuego <J>#walls<Rose>.<VP><CE><BR>En este minijuego tendrás que tener cuidado, podrías caer por el meep de tu oponente. ¡Si quieres ganar, derríbalo y sé el último ratón vivo!<BR><ROSE>¡Cuidado con las paredes! ¡Explotarán cada cierto tiempo!<BR><J>Envía tus mapas a este hilo:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><PT>Escriba !help para ver más información",
         warning1 = "<ROSE>¡Las explosiones empezaron!</ROSE>",
         warning2 = "<ROSE>¡Las paredes serán más rápidas</ROSE>!",
         close_p = "Cerrar",
-        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Ayuda<b>",
-        help_2 = "<p align = 'center'> <VP>  ¡Bienvenido a<BV> #Walls<VP>! \n En este minijuego debes tener cuidado con los meeps de tus oponentes..<br><br>Si quieres ganar, derrotar a tus oponentes y ser el último ratón vivo! <br> <br><ROSE>#Walls</ROSE><J>  es un código fuente abierto. Si quieres contribuir, consulta nuestro repositorio github.com/ Gersxlnd /-Walls <br><br><ROSE>¡Cuidado con las paredes! <br><br>¡También surgirán explosiones a medida que avanzas!<CS> <br> <br> Creado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
+        help_1 = "<p align='center'><font size ='14' color='#00C17C'>Ayuda<b>",
+        help_2 = "<p align = 'center'> <VP>  ¡Bienvenido a<BV> #Walls<VP>! \n <br> En este minijuego debes tener cuidado con los meeps de tus oponentes..<br><br>Si quieres ganar, derrotar a tus oponentes y ser el último ratón vivo! <br> <br><ROSE>#Walls</ROSE><J>  es un código fuente abierto. Si quieres contribuir, consulta nuestro repositorio github.com/ Gersxlnd /-Walls <br><br><ROSE>¡Cuidado con las paredes! <br><br>¡También surgirán explosiones a medida que avanzas!<CS> <br> <br> Creado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
         mapList = "Lista de mapas actual: ",
         translation_ = "Cambiaste tu idioma predeterminado a: ",
         won = " ganó!",
         noWon = "<J>Nadie ganó!",
+        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> mostrará una pestaña de ayuda. </J> <br><br><BV>!snow -</BV> <J> quita la nieve si la hay </J><br><br><BV>!langue [region] -</BV> <J> cambia tu idioma al seleccionado. </J><br><br><BV>!maplist -</BV> <J>obtendrás la lista oficial de mapas de #Walls.</J>",
     },
     ['tr'] = {
         warning = "UYARI",
-        welcome = "<ROSE>Hoş geldiniz <J>#walls.</J><VP><CE><BR> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <BR> <ROSE> Duvarlara dikkat edin! Patlamalar zamanla ortaya çıkacak! <BR> <J>Haritalarınızı bu konu başlığına gönderin:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1",
+        welcome = "<ROSE>Hoş geldiniz <J>#walls.</J><VP><CE><BR> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <BR> <ROSE> Duvarlara dikkat edin! Patlamalar zamanla ortaya çıkacak! <BR> <J>Haritalarınızı bu konu başlığına gönderin:<BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1.<BR><PT> Daha fazla bilgi için !help yazın",
         warning1 = "<ROSE>Patlamalar eklendi!</ROSE>",
         warning2 = "<ROSE>Duvarlar daha hızlı halde!</ROSE>",
         close_p = "Kapat",
-        help_1 = "<p align='center'><font size ='18' color='#00C17C'>Yardım<b>",
-        help_2 = "<p align = 'center'> <VP><BV> #Walls'a<VP> Hoş geldiniz<VP>! \n <br><br> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <br> <br><ROSE>#Walls</ROSE><J> açık kaynak kodudur. Katkıda bulunmak istiyorsanız kaynağımıza göz atın github.com/Gersxlnd/-Walls <br><br><ROSE> Duvarlara dikkat edin! <br><br> Siz ilerledikçe patlamalar da ortaya çıkacak!<CS> <br> <br>Tarafından oluşturuldu: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> ve <R>Rianmojang1#0000<CS>.<CS> <br> <br > Katkıda bulunanlar: <R> Hugotitas#0000.<CS><J>",
+        help_1 = "<p align='center'><font size ='14' color='#00C17C'>Yardım<b>",
+        help_2 = "<p align = 'center'> <VP><BV> #Walls'a<VP> Hoş geldiniz<VP>! \n <br> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <br> <br><ROSE>#Walls</ROSE><J> açık kaynak kodudur. Katkıda bulunmak istiyorsanız kaynağımıza göz atın github.com/Gersxlnd/-Walls <br><br><ROSE> Duvarlara dikkat edin! <br><br> Siz ilerledikçe patlamalar da ortaya çıkacak!<CS> <br> <br>Tarafından oluşturuldu: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> ve <R>Rianmojang1#0000<CS>.<CS> <br> <br > Katkıda bulunanlar: <R> Hugotitas#0000.<CS><J>",
         mapList = "Güncel harita listesi: ",
         translation_ = "Varsayılan dilinizi değiştirdiniz: ",
         won = " kazandı!",
         noWon = "<J>Kimse kazanmadı!",
+        commands = "<VI>Commands </VI> <br><br><BV>!help -</BV>  <J>Size yardım ekranını gösterecek. </J> <br><br><BV>!snow -</BV> <J> Kar efektini kapatır. </J><br><br><BV>!langue [ülke kodu] -</BV> <J> Mevcut dilinizi seçilen dille değiştirir. </J><br><br><BV>!maplist -</BV> <J> #Walls'un resmi harita listesini göreceksiniz.</J>",
     },
 }
-
 system.disableChatCommandDisplay(cmd, true)
 
 w = 262
@@ -87,12 +91,12 @@ local tempo = os.time();
 local s=1
 local players = {}
 isBonusTaken = false
-local adm = {["Rafapkzz#8588"] = true,["Brsowl#0000"] = true,["Rianmojang1#0000"] = true, ["Ghost#6398"] = true, ["Lays#1146"] =true}
+local adm = {["Rafapkzz#8588"] = true,["Brsowl#0000"] = true,["Rianmojang1#0000"] = true, ["Ghost#6398"] = true, ["Lays#1146"] = true}
 
-local mod = {["Artsyemir#0000"] = true, ["Tsohg#1253"]= true, ["Potjkb#0000"] = true}
+local mod = { ["Tsohg#1253"]= true,["Artsyemir#0000"] = true, ["Potjkb#0000"] = true}
 
 local maps = {
-    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765,7947711,7947712,7947713,7947714,7506270, 7506352, 7506584, 7506587, 7507050, 7508721,
+    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765,7947711,7947712,7947713,7947714,7506270, 7506352, 7506584, 7506587, 7507050, 7508721,7948209, 7948212, 7948208, 7948204, 7938846,
 
 };
 tfm.exec.newGame(maps[math.random(#maps)])
@@ -202,6 +206,9 @@ function eventLoop(t, r)
         table.foreach(tfm.get.room.playerList, function(k)
             tfm.exec.chatMessage(translate(k, 'warning1'), k)
         end)
+        for i = 0, 12, 1 do
+            ui.removeTextArea(i, nil)
+        end
     end
     
     if t >= 100000 and t <= 100500 then
@@ -304,7 +311,7 @@ function eventChatCommand(name, cmd)
             tfm.exec.chatMessage("<J>"..translate(name, "translation_") .. arg[2], name)
         end
     elseif arg[1] == "maplist" then
-        tfm.exec.chatMessage("<VI>[#Walls] " ..translate(name, "mapList")..  "</VI><J>" ..table.concat(maps," ", 2),name)
+        tfm.exec.chatMessage("<VI>[#Walls] " ..translate(name, "mapList")..  "</VI><J>" ..table.concat(maps," ", 2),name)   
     end
  
 
@@ -312,16 +319,12 @@ function eventChatCommand(name, cmd)
             if arg[1] == "map" and arg[2] ~= nil then
                 tfm.exec.newGame(arg[2])
 
-            elseif arg[1] == "commands" then
-                modHelp(name)
-
             elseif arg[1] == "map" and arg[2] == nil then
                 tfm.exec.newGame(maps[math.random(#maps)])
 
             elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
                 tfm.exec.killPlayer(arg[2])
-                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name] and name)
-
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name] and name)             
         end
     end
 
@@ -344,9 +347,6 @@ function eventChatCommand(name, cmd)
             elseif arg[1] == "size" and arg[2] ~= nil and arg[3] then
                 tfm.exec.changePlayerSize(arg[2], arg[3])
 
-            elseif arg[1] == "commands" then
-                admHelp(name)
-            
             elseif arg[1] == "ms" then
                 tfm.exec.chatMessage("<VI>[#Walls] </VI><J>"..table.concat(arg," ", 2), nil)
 
@@ -376,34 +376,19 @@ function eventChatCommand(name, cmd)
     end 
 end
 
-
-function admHelp(playerName) 
-    tfm.exec.chatMessage("<R>Admin commands</R>\n <J>!commands - to show available adm commands\n !map or !map [mapcode] - load an official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n !freeze [player] - freezes a player\n !size [player] [number 1 - 5] or [random] - gives the player a random or a given size\n !ms - Chat message\n !maxplayers [1 - 50] - set max players in the room\n !respawn [player] - respawn a player\n !time [number] - change maps time\n !link or !unlink [player1] [player2] - link or unlink two players\n", playerName)
-end
-
-function modHelp(playerName) 
-    tfm.exec.chatMessage("<VI>Mod commands</VI>\n <J>!commands - to show available mod commands\n !map or !map [mapcode] - load a official random map or load one\n !kill [player] - kills a player - must be only used as punishment\n" , playerName) 
-end
-
 tfm.exec.setRoomMaxPlayers(25)
 
 function eventNewGame(name)
-isBonusTaken = false
-
-
+    isBonusTaken = false
     w = 4
     w1 = 4
     x = 792
     x1 = 4 
-    ui.removeTextArea(50, nil)
-    ui.removeTextArea(51, nil)
-    ui.removeTextArea(99, nil)
-    ui.removeTextArea(100, nil)
-    ui.removeTextArea(0, nil)
-    ui.removeTextArea(1, nil)
-    ui.removeTextArea(2, nil)
-    ui.removeTextArea(3, nil)
-    ui.removeTextArea(4, nil)
+
+    for i = 0, 12, 1 do
+        ui.removeTextArea(i, name)
+    end
+
     addBonus()
 
     ui.addTextArea(10001,"",nil,-244,-18,252,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10002,"",nil,805,-6,242,651,0x6A7495,0x6A7495,1,true)ui.addTextArea(10003,"",nil,-481,-185,1532,200,0x6A7495,0x6A7495,1,true)ui.addTextArea(10004,"",nil,-467,413,1532,283,0x6A7495,0x6A7495,1,true)
@@ -431,10 +416,20 @@ end
 
 table.foreach(tfm.get.room.playerList, eventNewPlayer)
 
-function eventTextAreaCallback(id, nick, call)
+function eventTextAreaCallback(id, name, call)
     if call=="cerrar" then
         for i = 0, 17, 1 do
-        ui.removeTextArea(i, nick)
+        ui.removeTextArea(i, name)
+        end
+    elseif call == "commands" then
+        commandsHelp(name)
+        for i = 0, 6, 1 do
+            ui.removeTextArea(i,name)
+        end
+    elseif call == "Helps" then   
+        help(name)
+        for i = 7, 12, 1 do
+            ui.removeTextArea(i, name)
         end
     end
 end
@@ -442,8 +437,31 @@ end
 function help(name)
     local textArea_y = 50
     ui.addTextArea(0, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(1, translate(name, "help_1"), name, 360, textArea_y, 90, 25, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(2, "<p align='center'><font size ='15' color='#316CCC'><b>#Walls", name, 235, textArea_y, 88, 20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(1, "<p align='center'><font size ='14' color='#00C17C'>Help<b>", name, 320, textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(2, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y,nil , nil, 0x073247, 0x121212, 1, true)
     ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60, 20, 0x073247, 0x121212, 1, true)
     ui.addTextArea (4,translate(name, "help_2"), name, 248, 100, 300, 265, 0, 0, 0, true)
+    ui.addTextArea(6, "<p align='center'><a href='event:commands'><font size ='14' color='#00C17C'><b>Commands", name, 375, textArea_y,nil , nil, 0x073247, 0x121212, 1, true)
+end
+function commandsHelp(name)
+    local textArea_y = 50
+    local textCommand = translate(name, "commands")
+    local modCommandsMessage = "<VI>Mod commands</VI> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
+    local admCommandMessage = "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [number 1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
+
+    ui.addTextArea(7, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(8, "<p align='center'><a href='event:Helps'><font size ='14' color='#00C17C'>Help<b>", name, 320, textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(9, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y,nil , nil, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(10, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60, 20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(12, "<p align='center'><font size ='14' color='#00C17C'><b>Commands", name, 375, textArea_y,nil , nil, 0x073247, 0x121212, 1, true)
+
+    if adm[name] then
+        ui.addTextArea (11,admCommandMessage ..modCommandsMessage.. translations['en'].commands, name, 248, 100, 300, 265, 0, 0, 0, true)
+        
+    elseif mod[name] then
+        ui.addTextArea (11,modCommandsMessage ..translations['en'].commands, name, 248, 100, 300, 265, 0, 0, 0, true)
+
+    else
+         ui.addTextArea (11,textCommand, name, 248, 100, 300, 265, 0, 0, 0, true)
+    end
 end
