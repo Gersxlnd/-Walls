@@ -384,6 +384,11 @@ function eventNewGame(name)
     w1 = 4
     x = 792
     x1 = 4 
+    
+    ui.removeTextArea(50, nil)
+    ui.removeTextArea(51, nil)
+    ui.removeTextArea(99, nil)
+    ui.removeTextArea(100, nil)
 
     for i = 0, 12, 1 do
         ui.removeTextArea(i, name)
