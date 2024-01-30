@@ -16,7 +16,7 @@ local translations = {
         translation_ = "Você mudou seu idioma padrão para: ",
         won = " ganhou!",
         noWon = "<J>Ninguém ganhou!",
-        commands = "<VI>Commandos</VI> <br><br><BV>!help -</BV>  <J> isso mostra a aba de ajuda. </J> <br><br><BV>!snow -</BV> <J> remove neve se houver </J><br><br><BV>!langue [região] -</BV> <J> mude seu idioma para o idioma selecionado. </J><br><br><BV>!maplist -</BV> <J> é enviado uma lista dos maps oficiais do #Walls para você.</J>",
+        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> isso mostra a aba de ajuda. </J> <br><br><BV>!snow -</BV> <J> remove neve se houver </J><br><br><BV>!langue [região] -</BV> <J> mude seu idioma para o idioma selecionado. </J><br><br><BV>!maplist -</BV> <J> é enviado uma lista dos maps oficiais do #Walls para você.</J>",
     },
     ['en'] = {
         warning = "WARNING",
@@ -35,7 +35,7 @@ local translations = {
     },
     ['fr'] = {
         warning = "ATTENTION",
-        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1<BR><PT>Type !help to see more informations",
+        welcome = "<ROSE>Bienvenue sur <J>#walls.</J><VP><CE><BR>Dans ce mini-jeu vous devrez faire attention à ne pas tomber avec le meep de votre adversaire. Si vous voulez gagner, soyez la dernière souris en vie ! <BR> <ROSE> Attention aux murs ! Des explosions seront déclenchées au fil du temps ! <BR> <J> Envoyez vos cartes sur ce sujet : <BR><VP>https://atelier801.com/topic?f=6&t=898941&p=1#m1.<BR><PT>Tape !help pour plus d'informations.",
         warning1 = "<ROSE>Les explosions ont été ajoutées!</ROSE>",
         warning2 = "<ROSE>Les murs sont devenus plus rapides!</ROSE>", 
         close_p = "Fermer",
@@ -45,7 +45,7 @@ local translations = {
         translation_ = "Votre nouvelle langue par défaut est : ",
         won = " a gagné!",
         noWon = "<J>Personne n'a gagné!",
-        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> it will show you a help tab. </J> <br><br><BV>!snow -</BV> <J> it removes snow if there is any </J><br><br><BV>!langue [region] -</BV> <J> changes your language to the selected one. </J><br><br><BV>!maplist -</BV> <J>you will get the official map list of #Walls.</J>",
+        commands = "<VI>Commands</VI> <br><br><BV>!help -</BV>  <J> ouvre l'écran d'aide. </J> <br><br><BV>!snow -</BV> <J> retire la neige </J><br><br><BV>!langue [region] -</BV> <J> change la langue pour celle sélectionnée. </J><br><br><BV>!maplist -</BV> <J> ouvre la maplist officielle de #Walls.</J>", 
     },
     ['es'] = {
         warning = "PELIGRO",
