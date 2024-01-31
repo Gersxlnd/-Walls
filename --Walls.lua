@@ -206,9 +206,6 @@ function eventLoop(t, r)
         table.foreach(tfm.get.room.playerList, function(k)
             tfm.exec.chatMessage(translate(k, 'warning1'), k)
         end)
-        for i = 0, 12, 1 do
-            ui.removeTextArea(i, nil)
-        end
     end
     
     if t >= 100000 and t <= 100500 then
