@@ -91,18 +91,18 @@ local tempo = os.time();
 local s=1
 local players = {}
 isBonusTaken = false
+local banned = {}
 local adm = {["Rafapkzz#8588"] = true,["Brsowl#0000"] = true,["Rianmojang1#0000"] = true, ["Ghost#6398"] = true, ["Lays#1146"] = true}
 
 local mod = { ["Tsohg#1253"]= true,["Artsyemir#0000"] = true, ["Potjkb#0000"] = true}
 
 local maps = {
-    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765,7947711,7947712,7947713,7947714,7506270, 7506352, 7506584, 7506587, 7507050, 7508721,7948209, 7948212, 7948208, 7948204, 7938846,
-
+    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765,7947711,7947712,7947713,7947714,7506270, 7506352, 7506584, 7506587, 7507050, 7508721,7948209, 7948212, 7948208, 7948204, 7938846,7942778,7942780,7942781,7942793
 };
+-- to perm 7942778, 7942780, 7942781, 7942793
 tfm.exec.newGame(maps[math.random(#maps)])
 
 local powers = {
-
     size = function(playerName)
        tfm.exec.changePlayerSize(playerName, math.random(1, 9)/ 10)
     end,
@@ -115,7 +115,20 @@ local powers = {
     transformation = function (playerName)
         tfm.exec.giveTransformations(playerName, true) 
     end,
-
+    link = function(playerName)
+        local playerList = {}
+        for name, _ in next, tfm.get.room.playerList do
+            if name ~= playerName and not table.contains(banned, name) then
+                playerList[#playerList + 1] = name
+            end
+        end
+        if #playerList > 0 then
+            local playerTwo = playerList[math.random(#playerList)]
+            tfm.exec.linkMice(playerName, playerTwo, true)
+        else
+            tfm.exec.chatMessage("<J>There is no other player to link.")
+        end
+    end
 }
 
 function addBonus()
@@ -170,6 +183,15 @@ function translate(name, key)
     local lang = (data[name] and data[name].lang or tfm.get.room.community)
     lang = (translations[lang] and lang or 'en')
     return translations[lang][key] or nil
+end
+
+function table.contains(tbl, value)
+    for _, v in ipairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
 end
 
 function eventPlayerDied(name)
@@ -321,7 +343,18 @@ function eventChatCommand(name, cmd)
 
             elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
                 tfm.exec.killPlayer(arg[2])
-                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name] and name)             
+                tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" ..arg[2].. " got killed by: " ..name, adm[name] and name)  
+
+            elseif arg[1] == "ban" and arg[2] ~= nil then
+                table.insert(banned, arg[2])
+                tfm.exec.killPlayer(arg[2])
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2].. " got banned. Reason: " .. table.concat(arg," ", 3))
+
+            elseif arg[1] == "unban" and tonumber(arg[2]) then
+                table.remove(banned, arg[2])
+
+            elseif arg[1] == "banneds" then
+                tfm.exec.chatMessage(table.concat(banned," "), name)
         end
     end
 
@@ -357,6 +390,18 @@ function eventChatCommand(name, cmd)
             elseif arg[1] == "respawn" and arg[2] ~= nil then
                 tfm.exec.respawnPlayer(arg[2])
                 tfm.exec.chatMessage("<Vi>!Player: " ..arg[2].. " respawned by: " ..name, adm[name] and mod[name])
+                tfm.exec.giveMeep(arg[2], true)
+
+            elseif arg[1] == "ban" and arg[2] ~= nil then
+                table.insert(banned, arg[2])
+                tfm.exec.killPlayer(arg[2])
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2].. " got banned. Reason: " .. table.concat(arg," ", 3) )
+
+            elseif arg[1] == "unban" and tonumber(arg[2]) then
+                table.remove(banned, arg[2])
+
+            elseif arg[1] == "banneds" then
+                tfm.exec.chatMessage(table.concat(banned," "), name)
 
             elseif arg[1] == "time" and tonumber(arg[2]) ~= nil then
                 tfm.exec.setGameTime(arg[2], true)
@@ -386,6 +431,11 @@ function eventNewGame(name)
     ui.removeTextArea(51, nil)
     ui.removeTextArea(99, nil)
     ui.removeTextArea(100, nil)
+
+    for _, name in pairs(banned) do
+        tfm.exec.freezePlayer(name)
+        tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen with each new game", #banned)
+    end
 
     for i = 0, 12, 1 do
         ui.removeTextArea(i, name)
@@ -448,7 +498,8 @@ end
 function commandsHelp(name)
     local textArea_y = 50
     local textCommand = translate(name, "commands")
-    local modCommandsMessage = "<VI>Mod commands</VI> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
+    local modCommandsMessage = "<VI>Mod commands</VI> <br><br> <BV>!ban [player] [reason] or !unban [number] -</BV> <J>Ban or unban a player<br><br> (use !banneds to see banned players and use the position in the line to unban them).</J> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
+
     local admCommandMessage = "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [number 1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
 
     ui.addTextArea(7, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
