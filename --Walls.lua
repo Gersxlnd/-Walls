@@ -122,6 +122,7 @@ local maps = {
     7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948208, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793
 };
 -- to perm 7942778, 7942780, 7942781, 7942793
+-- darkness bugged 7507808, @7507577,@7508407, 7508527, 7507436, 7497394, @7507299, 7507669, 7507735,7937063, @7946764,7946765,7506270,  7506352, 7506584,7506587, 7507050,7508721,7948208,7948204
 tfm.exec.newGame(maps[math.random(#maps)])
 
 local powers = {
@@ -160,6 +161,25 @@ local powers = {
     box = function (playerName)
         table.insert(canUseBox, playerName)
         tfm.exec.chatMessage("<J>You can use Z KEY to drop a box", playerName)
+    end,
+    --[[
+    nightMode = function (playerName)
+        for name, _ in next, tfm.get.room.playerList do
+            if name ~= playerName then
+                tfm.exec.setPlayerNightMode(true, name)
+                tfm.exec.chatMessage("<J>Everybody with night mode unless "..playerName)
+            end
+        end
+    end,
+    --]]
+    balloon = function (playerName)
+        local color = math.random(1, 4)
+        tfm.exec.attachBalloon(playerName, true, color, false, 1)
+        tfm.exec.chatMessage("<J>Congratz you got the most useles power", playerName)
+    end,
+    vampire = function (playerName)
+        tfm.exec.setVampirePlayer(playerName, true)
+        tfm.exec.chatMessage("<J>Now you are a vampire. is it bad or good luck?", playerName) 
     end
 }
 
@@ -467,7 +487,7 @@ function eventNewGame(name)
     
     for _, name in pairs(banned) do
         tfm.exec.freezePlayer(name)
-        tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", #banned)
+        tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", name)
     end
 
     for i = 0, 12, 1 do
