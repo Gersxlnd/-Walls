@@ -125,7 +125,6 @@ local maps = {
 tfm.exec.newGame(maps[math.random(#maps)])
 
 local powers = {
-    --[[
     size = function(playerName)
         local randomSize = math.random(1, 9) / 10
         tfm.exec.changePlayerSize(playerName, randomSize)
@@ -157,7 +156,7 @@ local powers = {
         else
             tfm.exec.chatMessage("<J>There is no other player to link.")
         end
-    end,--]]
+    end,
     box = function (playerName)
         table.insert(canUseBox, playerName)
         tfm.exec.chatMessage("<J>You can use Z KEY to drop a box", playerName)
