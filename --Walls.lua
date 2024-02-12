@@ -125,6 +125,7 @@ local maps = {
 tfm.exec.newGame(maps[math.random(#maps)])
 
 local powers = {
+    --[[
     size = function(playerName)
         local randomSize = math.random(1, 9) / 10
         tfm.exec.changePlayerSize(playerName, randomSize)
@@ -156,7 +157,7 @@ local powers = {
         else
             tfm.exec.chatMessage("<J>There is no other player to link.")
         end
-    end,
+    end,--]]
     box = function (playerName)
         table.insert(canUseBox, playerName)
         tfm.exec.chatMessage("<J>You can use Z KEY to drop a box", playerName)
@@ -248,8 +249,11 @@ function eventPlayerDied(name)
 end
 
 function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVelocity)
+    local message = ("You cannot use another box until the current box disappears. Wait 8 seconds")
+    local message2 = ("Now you can use it again")
+
     if boxUsed then
-        return tfm.exec.chatMessage("<J>You cannot use another box until the current box disappears. Wait 8 seconds", name)
+        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0x4E6D49, 0x998041, 1, false) 
     end
 
     if table.contains(canUseBox, name) then
@@ -258,7 +262,8 @@ function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVeloci
             boxUsed = true
             local timer = a.new("boxUsed", function()
                 tfm.exec.removeObject(boxPower)
-                boxUsed = false  
+                boxUsed = false
+                ui.addTextArea(1234, message2, name, 350, 375, 150, nil, 0x4E6D49, 0x998041, 1, false)
             end, 8000, false)
         end
     end
@@ -459,7 +464,8 @@ function eventNewGame(name)
     ui.removeTextArea(51, nil)
     ui.removeTextArea(99, nil)
     ui.removeTextArea(100, nil)
-
+    ui.removeTextArea(1234, nil)
+    
     for _, name in pairs(banned) do
         tfm.exec.freezePlayer(name)
         tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", #banned)
