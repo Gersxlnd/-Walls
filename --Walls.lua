@@ -174,7 +174,7 @@ local powers = {
     balloon = function (playerName)
         local color = math.random(1, 4)
         tfm.exec.attachBalloon(playerName, true, color, false, 1)
-        tfm.exec.chatMessage("<J>Congratz you got the most useles power", playerName)
+        tfm.exec.chatMessage("<J>Congratz you got the most useles power THE BALLOON", playerName)
     end,
     vampire = function (playerName)
         tfm.exec.setVampirePlayer(playerName, true)
@@ -287,6 +287,13 @@ function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVeloci
     end
 end
 
+function eventPlayerMeep(playerName, x, y)
+    meepImage = tfm.exec.addImage("18b633bf5ce.png", "!0", x-20, y-20, playerName, 0.23, 0.26, -0.17, 1, 0, 0, false) 
+    local timer = a.new("meepImage", function()
+        tfm.exec.removeImage(meepImage)
+    end, 300, false)
+end
+
 function eventLoop(t, r)
     Timer.process()
     if r <= 0 then
@@ -333,11 +340,14 @@ function eventLoop(t, r)
             xex = math.random(w1, x)
             yex = math.random(0, 380)
             tfm.exec.explosion(xex, yex, 50, 100, true)
+            explosionImage = tfm.exec.addImage("184e45e04bf.png", "!0", xex, yex, nil, 0.14, 0.16, 0.00, 1, 0, 0, false)
+            local timer = a.new("explosionImage", function()
+                tfm.exec.removeImage(explosionImage)
+            end, 500, false)
             tfm.exec.displayParticle(12, xex, yex)
             run = os.time();
         end
     end
-
     if t <= 1000 then
         tfm.exec.setGameTime(max_time)
         for k, v in next,
