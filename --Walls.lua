@@ -152,15 +152,15 @@ local powers = {
     end,
     freeze = function(playerName)
         tfm.exec.freezePlayer(playerName, true, true)
-        tfm.exec.chatMessage("<J>Bad luck. You are freezed", playerName)
+        tfm.exec.chatMessage("<J>Bad luck. You are f<ROSE>reezed", playerName)
     end,
     cheese = function(playerName)
         tfm.exec.giveCheese(playerName)
-        tfm.exec.chatMessage("<J>Bad luck. You got cheese", playerName)
+        tfm.exec.chatMessage("<J>Bad luck. You got <ROSE>cheese", playerName)
     end,
     transformation = function(playerName)
         tfm.exec.giveTransformations(playerName, true)
-        tfm.exec.chatMessage("<J>You have now transformations powers", playerName)
+        tfm.exec.chatMessage("<J>You have now <ROSE>transformations powers", playerName)
     end,
     link = function(playerName)
         local playerList = {}
@@ -179,24 +179,24 @@ local powers = {
     end,
     box = function(playerName)
         table.insert(canUseBox, playerName)
-        tfm.exec.chatMessage("<J>You can use Z KEY to drop a box", playerName)
+        tfm.exec.chatMessage("<J>You can use <ROSE>Z KEY <J>to drop a box", playerName)
     end,
     nightMode = function(playerName)
         for name, _ in next, tfm.get.room.playerList do
             if name ~= playerName then
                 tfm.exec.setPlayerNightMode(true, name)
-                tfm.exec.chatMessage("<J>Everybody with night mode except " .. playerName)
+                tfm.exec.chatMessage("<J>Everybody with night mode except<ROSE> " .. playerName)
             end
         end
     end,
     balloon = function(playerName)
         local color = math.random(1, 4)
         tfm.exec.attachBalloon(playerName, true, color, false, 1)
-        tfm.exec.chatMessage("<J>Congratz you got the most useles power THE BALLOON", playerName)
+        tfm.exec.chatMessage("<J>Congratz you got the most useles power<ROSE> THE BALLOON", playerName)
     end,
     vampire = function(playerName)
         tfm.exec.setVampirePlayer(playerName, true)
-        tfm.exec.chatMessage("<J>Now you are a vampire. is it bad or good luck?", playerName)
+        tfm.exec.chatMessage("<J>Now you are a <ROSE>vampire. <J>is it bad or good luck?", playerName)
     end
 }
 
@@ -289,7 +289,7 @@ function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVeloci
     local message2 = ("Now you can use it again")
 
     if boxUsed then
-        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0x4E6D49, 0x998041, 1, false)
+        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0xA32929,0xB54A4A , 1, false)
     end
 
     if table.contains(canUseBox, name) then
@@ -316,6 +316,18 @@ function eventLoop(elapsedTime, remainingTime)
     Timer.process()
     if remainingTime <= 0 then
         tfm.exec.newGame(maps[math.random(#maps)])
+    end
+
+    if elapsedTime >= 8000 and elapsedTime < 9000 then
+        ui.removeTextArea(1234)
+    end
+
+    if remainingTime <= 3000 then
+        for playerName, playerData in pairs(tfm.get.room.playerList) do
+            tfm.exec.linkMice(playerName, playerName, false)
+            tfm.exec.changePlayerSize(playerName, 1)
+            tfm.exec.giveTransformations(playerName, false)
+        end
     end
 
     if elapsedTime >= 60000 and elapsedTime <= 60500 then
@@ -377,9 +389,9 @@ function eventLoop(elapsedTime, remainingTime)
     if elapsedTime >= 105000 then
         if time < os.time() - 500 then
             ui.addTextArea(99, "", nil, xLeftWalls, -576, widthLeftWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
-            widthLeftWalls = widthLeftWalls + 5
+            widthLeftWalls = widthLeftWalls + 6
             ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
-            widthRightWalls = widthRightWalls + 5
+            widthRightWalls = widthRightWalls + 6
             xRightWalls = xRightWalls - 3
             time = os.time();
             ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
@@ -398,9 +410,9 @@ function eventLoop(elapsedTime, remainingTime)
         end
 
         for name, p in pairs(tfm.get.room.playerList) do
-            if p.x >= xRightWalls + 2 then
+            if p.x >= xRightWalls then
                 tfm.exec.killPlayer(name)
-            elseif p.x <= widthRightWalls + 2 then
+            elseif p.x <= widthRightWalls then
                 tfm.exec.killPlayer(name)
             end
         end
@@ -502,15 +514,12 @@ tfm.exec.setRoomMaxPlayers(25)
 
 function eventNewGame(name)
     isBonusTaken = false
-
     xLeftWalls = 4 --x1
-    widthLeftWalls = 4 -- width
-
-    
+    widthLeftWalls = 4 -- width 
     xRightWalls = 796 --x
     widthRightWalls = 4 -- width
-
     canUseBox = {}
+    addBonus()
 
     ui.removeTextArea(50, nil)
     ui.removeTextArea(51, nil)
@@ -526,13 +535,6 @@ function eventNewGame(name)
     for i = 0, 12, 1 do
         ui.removeTextArea(i, name)
     end
-
-    addBonus()
-
-    ui.addTextArea(10001, "", nil, -244, -18, 252, 651, 0x6A7495, 0x6A7495, 1, true)
-    ui.addTextArea(10002, "", nil, 805, -6, 242, 651, 0x6A7495, 0x6A7495, 1, true)
-    ui.addTextArea(10003, "", nil, -481, -185, 1532, 200, 0x6A7495, 0x6A7495, 1, true)
-    ui.addTextArea(10004, "", nil, -467, 413, 1532, 283, 0x6A7495, 0x6A7495, 1, true)
 
     for playerName, playerData in pairs(tfm.get.room.playerList) do
         tfm.exec.linkMice(playerName, playerName, false)
