@@ -1,7 +1,27 @@
 --[[Walls]]
 --[[Timers library i found on github https://seniru.github.io/Timers4TFM/]]--
 --DO NOT CHANGE ANYTHING HERE--
-local a={}a.__index=a;a._timers={}setmetatable(a,{__call=function(b,...)return b.new(...)end})function a.process()local c=os.time()local d={}for e,f in next,a._timers do if f.isAlive and f.mature<=c then f:call()if f.loop then f:reset()else f:kill()d[#d+1]=e end end end;for e,f in next,d do a._timers[f]=nil end end;function a.new(g,h,i,j,...)local self=setmetatable({},a)self.id=g;self.callback=h;self.timeout=i;self.isAlive=true;self.mature=os.time()+i;self.loop=j;self.args={...}a._timers[g]=self;return self end;function a:setCallback(k)self.callback=k end;function a:addTime(c)self.mature=self.mature+c end;function a:setLoop(j)self.loop=j end;function a:setArgs(...)self.args={...}end;function a:call()self.callback(table.unpack(self.args))end;function a:kill()self.isAlive=false end;function a:reset()self.mature=os.time()+self.timeout end;Timer=a
+local a = {}
+a.__index = a; a._timers = {}
+setmetatable(a, { __call = function(b, ...) return b.new(...) end })
+function a.process()
+    local c = os.time()
+    local d = {}
+    for e, f in next, a._timers do if f.isAlive and f.mature <= c then
+            f:call()
+            if f.loop then f:reset() else
+                f:kill()
+                d[#d + 1] = e
+            end
+        end end; for e, f in next, d do a._timers[f] = nil end
+end; function a.new(g, h, i, j, ...)
+    local self = setmetatable({}, a)
+    self.id = g; self.callback = h; self.timeout = i; self.isAlive = true; self.mature = os.time() + i; self.loop = j; self.args = { ... }
+    a._timers[g] = self; return self
+end; function a:setCallback(k) self.callback = k end; function a:addTime(c) self.mature = self.mature + c end; function a:setLoop(
+    j) self.loop = j end; function a:setArgs(...) self.args = { ... } end; function a:call() self.callback(table.unpack(
+    self.args)) end; function a:kill() self.isAlive = false end; function a:reset() self.mature = os.time() +
+    self.timeout end; Timer = a
 
 for _, f in next, { "AutoShaman", "AutoScore", "AutoNewGame", "AutoTimeLeft", "MinimalistMode", "PhysicalConsumables", "AfkDeath" } do
     tfm.exec["disable" .. f]()
@@ -99,18 +119,16 @@ local translations = {
 }
 system.disableChatCommandDisplay(cmd, true)
 
-w = 262
-w1 = 262
-x = 809
-x1 = -267
+xLeftWalls = -267 --x1
+widthLeftWalls = 262 -- width
+xRightWalls = 809 --x
+widthRightWalls = 262 -- width
 data = {}
 local time = os.time();
 local run = os.time();
-local contagem = 1000;
+local counter = 1000;
 local max_time = 170
-local tempo = os.time();
 local s = 1
-local players = {}
 isBonusTaken = false
 local banned = {}
 local zKey = 90
@@ -121,7 +139,7 @@ local adm = { ["Rafapkzz#8588"] = true, ["Brsowl#0000"] = true, ["Rianmojang1#00
 local mod = { ["Tsohg#1253"] = true, ["Artsyemir#0000"] = true, ["Potjkb#0000"] = true }
 
 local maps = {
-    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948208, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793
+    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793
 };
 -- to perm 7942778, 7942780, 7942781, 7942793
 tfm.exec.newGame(maps[math.random(#maps)])
@@ -130,7 +148,7 @@ local powers = {
     size = function(playerName)
         local randomSize = math.random(1, 9) / 10
         tfm.exec.changePlayerSize(playerName, randomSize)
-        tfm.exec.chatMessage("<J>Your size is now:<ROSE> " ..randomSize, playerName)
+        tfm.exec.chatMessage("<J>Your size is now:<ROSE> " .. randomSize, playerName)
     end,
     freeze = function(playerName)
         tfm.exec.freezePlayer(playerName, true, true)
@@ -154,31 +172,31 @@ local powers = {
         if #playerList > 0 then
             local playerTwo = playerList[math.random(#playerList)]
             tfm.exec.linkMice(playerName, playerTwo, true)
-            tfm.exec.chatMessage("<J>You got linked with<ROSE> " ..playerTwo.. " <J>is it good? xD", playerName)
+            tfm.exec.chatMessage("<J>You got linked with<ROSE> " .. playerTwo .. " <J>is it good? xD", playerName)
         else
             tfm.exec.chatMessage("<J>There is no other player to link.")
         end
     end,
-    box = function (playerName)
+    box = function(playerName)
         table.insert(canUseBox, playerName)
         tfm.exec.chatMessage("<J>You can use Z KEY to drop a box", playerName)
     end,
-    nightMode = function (playerName)
+    nightMode = function(playerName)
         for name, _ in next, tfm.get.room.playerList do
             if name ~= playerName then
                 tfm.exec.setPlayerNightMode(true, name)
-                tfm.exec.chatMessage("<J>Everybody with night mode except "..playerName)
+                tfm.exec.chatMessage("<J>Everybody with night mode except " .. playerName)
             end
         end
     end,
-    balloon = function (playerName)
+    balloon = function(playerName)
         local color = math.random(1, 4)
         tfm.exec.attachBalloon(playerName, true, color, false, 1)
         tfm.exec.chatMessage("<J>Congratz you got the most useles power THE BALLOON", playerName)
     end,
-    vampire = function (playerName)
+    vampire = function(playerName)
         tfm.exec.setVampirePlayer(playerName, true)
-        tfm.exec.chatMessage("<J>Now you are a vampire. is it bad or good luck?", playerName) 
+        tfm.exec.chatMessage("<J>Now you are a vampire. is it bad or good luck?", playerName)
     end
 }
 
@@ -271,12 +289,12 @@ function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVeloci
     local message2 = ("Now you can use it again")
 
     if boxUsed then
-        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0x4E6D49, 0x998041, 1, false) 
+        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0x4E6D49, 0x998041, 1, false)
     end
 
     if table.contains(canUseBox, name) then
         if keyCode == zKey then
-            boxPower = tfm.exec.addShamanObject(2, x, y+10, 90, 0, 2, false, {})
+            boxPower = tfm.exec.addShamanObject(2, x, y + 10, 90, 0, 2, false, {})
             boxUsed = true
             local timer = a.new("boxUsed", function()
                 tfm.exec.removeObject(boxPower)
@@ -288,56 +306,56 @@ function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVeloci
 end
 
 function eventPlayerMeep(playerName, x, y)
-    meepImage = tfm.exec.addImage("18b633bf5ce.png", "!0", x-20, y-20, playerName, 0.23, 0.26, -0.17, 1, 0, 0, false) 
+    meepImage = tfm.exec.addImage("18b633bf5ce.png", "!0", x - 20, y - 20, playerName, 0.23, 0.26, -0.17, 1, 0, 0, false)
     local timer = a.new("meepImage", function()
         tfm.exec.removeImage(meepImage)
     end, 300, false)
 end
 
-function eventLoop(t, r)
+function eventLoop(elapsedTime, remainingTime)
     Timer.process()
-    if r <= 0 then
+    if remainingTime <= 0 then
         tfm.exec.newGame(maps[math.random(#maps)])
     end
 
-    if t >= 60000 and t <= 60500 then
-        table.foreach(tfm.get.room.playerList, function(k)
-            tfm.exec.chatMessage(translate(k, 'warning1'), k)
+    if elapsedTime >= 60000 and elapsedTime <= 60500 then
+        table.foreach(tfm.get.room.playerList, function(playerName)
+            tfm.exec.chatMessage(translate(playerName, 'warning1'), playerName)
         end)
     end
 
-    if t >= 100000 and t <= 100500 then
-        table.foreach(tfm.get.room.playerList, function(k)
-            tfm.exec.chatMessage(translate(k, 'warning2'), k)
+    if elapsedTime >= 100000 and elapsedTime <= 100500 then
+        table.foreach(tfm.get.room.playerList, function(playerName)
+            tfm.exec.chatMessage(translate(playerName, 'warning2'), playerName)
         end)
     end
-    if t >= 60000 and t <= 65000 then
-        if tempo < os.time() - contagem then
-            table.foreach(tfm.get.room.playerList, function(k)
-                if s == 1 then --ui.addTextArea(id, text, targetPlayer, x, y, width, height, backgroundColor, borderColor, backgroundAlpha, fixedPos)
-                    ui.addTextArea(50, "<font size ='80' color='#001'>WARNING", name, 190, 50, nil, nil, 0x940000,
-                        0x000000, 0, true)
-                    ui.addTextArea(51, "<font size ='80' color='#940000'>WARNING", name, 193, 47, nil, nil, 0x940000,
-                        0x000000, 0, true)
-                elseif s == 2 then
-                    ui.addTextArea(50, "<font size ='80' color='#001'>WARNING", name, 190, 50, nil, nil, 0x4d0000,
-                        0x000000, 0, true)
-                    ui.addTextArea(51, "<font size ='80' color='#4d0000'>WARNING", name, 193, 47, nil, nil, 0x940000,
-                        0x000000, 0, true)
-                    s = 0
-                end
-                s = s + 1
-            end)
+
+    if elapsedTime >= 60000 and elapsedTime <= 65000 then
+        if time < os.time() - counter then
+            if s == 1 then
+                ui.addTextArea(50, "<font size ='80' color='#001'>WARNING", nil, 190, 50, nil, nil, 0x940000,
+                    0x000000, 0, true)
+                ui.addTextArea(51, "<font size ='80' color='#940000'>WARNING", nil, 193, 47, nil, nil, 0x940000,
+                    0x000000, 0, true)
+            elseif s == 2 then
+                ui.addTextArea(50, "<font size ='80' color='#001'>WARNING", nil, 190, 50, nil, nil, 0x4d0000,
+                    0x000000, 0, true)
+                ui.addTextArea(51, "<font size ='80' color='#4d0000'>WARNING", nil, 193, 47, nil, nil, 0x940000,
+                    0x000000, 0, true)
+                s = 0
+            end
+            s = s + 1
         end
     end
-    if t >= 65000 and t <= 70000 then
+
+    if elapsedTime >= 65000 and elapsedTime <= 70000 then
         ui.removeTextArea(50, nil)
         ui.removeTextArea(51, nil)
     end
 
-    if t >= 65000 then
+    if elapsedTime >= 65000 then
         if run < os.time() - 5000 then
-            xex = math.random(w1, x)
+            xex = math.random(widthRightWalls, xRightWalls)
             yex = math.random(0, 380)
             tfm.exec.explosion(xex, yex, 50, 100, true)
             explosionImage = tfm.exec.addImage("184e45e04bf.png", "!0", xex, yex, nil, 0.14, 0.16, 0.00, 1, 0, 0, false)
@@ -348,40 +366,41 @@ function eventLoop(t, r)
             run = os.time();
         end
     end
-    if t <= 1000 then
+    if elapsedTime <= 1000 then
         tfm.exec.setGameTime(max_time)
-        for k, v in next,
-        tfm.get.room.playerList do
+        for k, v in next, tfm.get.room.playerList do
             tfm.exec.respawnPlayer(k) -- As vezes buga e alguem morre
             tfm.exec.giveMeep(k)
         end
     end
 
-    if t >= 105000 then
+    if elapsedTime >= 105000 then
         if time < os.time() - 500 then
-            ui.addTextArea(99, "", nil, x1, -576, w, 1360, 0x6a7495, 0x6a7495, 1, true)
-            w = w + 5
-            ui.addTextArea(100, "", nil, x, -575, w1, 1360, 0x6a7495, 0x6a7495, 1, true)
-            w1 = w1 + 5
-            x = x - 3
+            ui.addTextArea(99, "", nil, xLeftWalls, -576, widthLeftWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
+            widthLeftWalls = widthLeftWalls + 5
+            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
+            widthRightWalls = widthRightWalls + 5
+            xRightWalls = xRightWalls - 3
             time = os.time();
-            ui.addTextArea(100, "", nil, x, -575, w1, 1360, 0x6a7495, 0x6a7495, 1, true)
+            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
         end
     end
-    if t >= 3000 and t <= max_time * 1000 then
+
+    if elapsedTime >= 3000 and elapsedTime <= max_time * 1000 then
         if time < os.time() - 1000 then
-            ui.addTextArea(99, "", nil, x1, -576, w, 1360, 0x6a7495, 0x6a7495, 1, true)
-            w = w + 3
-            ui.addTextArea(100, "", nil, x, -575, w1, 1360, 0x6a7495, 0x6a7495, 1, true)
-            w1 = w1 + 3
-            x = x - 3
+            ui.addTextArea(99, "", nil, xLeftWalls, -576, widthLeftWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
+            widthLeftWalls = widthLeftWalls + 3
+            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
+            widthRightWalls = widthRightWalls + 3
+            xRightWalls = xRightWalls - 3
             time = os.time();
-            ui.addTextArea(100, "", nil, x, -575, w1, 1360, 0x6a7495, 0x6a7495, 1, true)
+            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
         end
+
         for name, p in pairs(tfm.get.room.playerList) do
-            if p.x >= x + 5 then
+            if p.x >= xRightWalls + 2 then
                 tfm.exec.killPlayer(name)
-            elseif p.x <= w + 5 then
+            elseif p.x <= widthRightWalls + 2 then
                 tfm.exec.killPlayer(name)
             end
         end
@@ -456,7 +475,8 @@ function eventChatCommand(name, cmd)
             tfm.exec.chatMessage("<J>max is 50 noob", name)
         elseif arg[1] == "respawn" and arg[2] ~= nil then
             tfm.exec.respawnPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name, adm[name] and mod[name])
+            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name,
+                adm[name] and mod[name])
             tfm.exec.giveMeep(arg[2], true)
         elseif arg[1] == "ban" and arg[2] ~= nil then
             table.insert(banned, arg[2])
@@ -482,10 +502,14 @@ tfm.exec.setRoomMaxPlayers(25)
 
 function eventNewGame(name)
     isBonusTaken = false
-    w = 4
-    w1 = 4
-    x = 792
-    x1 = 4
+
+    xLeftWalls = 4 --x1
+    widthLeftWalls = 4 -- width
+
+    
+    xRightWalls = 796 --x
+    widthRightWalls = 4 -- width
+
     canUseBox = {}
 
     ui.removeTextArea(50, nil)
@@ -493,7 +517,7 @@ function eventNewGame(name)
     ui.removeTextArea(99, nil)
     ui.removeTextArea(100, nil)
     ui.removeTextArea(1234, nil)
-    
+
     for _, name in pairs(banned) do
         tfm.exec.freezePlayer(name)
         tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", name)
@@ -553,12 +577,9 @@ end
 function help(name)
     local textArea_y = 50
     ui.addTextArea(0, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(1, "<p align='center'><font size ='14' color='#00C17C'>Help<b>", name, 320, textArea_y, nil, nil,
-        0x073247, 0x121212, 1, true)
-    ui.addTextArea(2, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y, nil, nil,
-        0x073247, 0x121212, 1, true)
-    ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60,
-        20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(1, "<p align='center'><font size ='14' color='#00C17C'>Help<b>", name, 320, textArea_y, nil, nil,0x073247, 0x121212, 1, true)
+    ui.addTextArea(2, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y, nil, nil,0x073247, 0x121212, 1, true)
+    ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60,20, 0x073247, 0x121212, 1, true)
     ui.addTextArea(4, translate(name, "help_2"), name, 248, 100, 300, 265, 0, 0, 0, true)
     ui.addTextArea(6, "<p align='center'><a href='event:commands'><font size ='14' color='#00C17C'><b>Commands", name,
         375, textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
@@ -574,18 +595,13 @@ function commandsHelp(name)
     "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [number 1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
 
     ui.addTextArea(7, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(8, "<p align='center'><a href='event:Helps'><font size ='14' color='#00C17C'>Help<b>", name, 320,
-        textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(9, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y, nil, nil,
-        0x073247, 0x121212, 1, true)
-    ui.addTextArea(10, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y,
-        60, 20, 0x073247, 0x121212, 1, true)
-    ui.addTextArea(12, "<p align='center'><font size ='14' color='#00C17C'><b>Commands", name, 375, textArea_y, nil, nil,
-        0x073247, 0x121212, 1, true)
+    ui.addTextArea(8, "<p align='center'><a href='event:Helps'><font size ='14' color='#00C17C'>Help<b>", name, 320,textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(9, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y, nil, nil,0x073247, 0x121212, 1, true)
+    ui.addTextArea(10, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y,60, 20, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(12, "<p align='center'><font size ='14' color='#00C17C'><b>Commands", name, 375, textArea_y, nil, nil,0x073247, 0x121212, 1, true)
 
     if adm[name] then
-        ui.addTextArea(11, admCommandMessage .. modCommandsMessage .. translations['en'].commands, name, 248, 100, 300,
-            265, 0, 0, 0, true)
+        ui.addTextArea(11, admCommandMessage .. modCommandsMessage .. translations['en'].commands, name, 248, 100, 300,265, 0, 0, 0, true)
     elseif mod[name] then
         ui.addTextArea(11, modCommandsMessage .. translations['en'].commands, name, 248, 100, 300, 265, 0, 0, 0, true)
     else
