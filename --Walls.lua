@@ -318,10 +318,6 @@ function eventLoop(elapsedTime, remainingTime)
         tfm.exec.newGame(maps[math.random(#maps)])
     end
 
-    if elapsedTime >= 8000 and elapsedTime < 9000 then
-        ui.removeTextArea(1234)
-    end
-
     if remainingTime <= 3000 then
         for playerName, playerData in pairs(tfm.get.room.playerList) do
             tfm.exec.linkMice(playerName, playerName, false)
