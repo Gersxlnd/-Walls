@@ -117,7 +117,6 @@ local translations = {
         "<VI>Commands </VI> <br><br><BV>!help -</BV>  <J>Size yardım ekranını gösterecek. </J> <br><br><BV>!snow -</BV> <J> Kar efektini kapatır. </J><br><br><BV>!langue [ülke kodu] -</BV> <J> Mevcut dilinizi seçilen dille değiştirir. </J><br><br><BV>!maplist -</BV> <J> #Walls'un resmi harita listesini göreceksiniz.</J>",
     },
 }
-system.disableChatCommandDisplay(cmd, true)
 
 xLeftWalls = -267 --x1
 widthLeftWalls = 262 -- width
@@ -139,7 +138,7 @@ local adm = { ["Rafapkzz#8588"] = true, ["Brsowl#0000"] = true, ["Rianmojang1#00
 local mod = { ["Tsohg#1253"] = true, ["Artsyemir#0000"] = true, ["Potjkb#0000"] = true }
 
 local maps = {
-    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793
+    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793, 7938847
 };
 -- to perm 7942778, 7942780, 7942781, 7942793
 tfm.exec.newGame(maps[math.random(#maps)])
@@ -178,8 +177,8 @@ local powers = {
         end
     end,
     box = function(playerName)
-        table.insert(canUseBox, playerName)
-        tfm.exec.chatMessage("<J>You can use <ROSE>Z KEY <J>to drop a box", playerName)
+        canUseBox[playerName] = true
+        tfm.exec.chatMessage("<J>You can use <ROSE>Z KEY <J>to drop a box every 5 seconds", playerName)
     end,
     nightMode = function(playerName)
         for name, _ in next, tfm.get.room.playerList do
@@ -285,22 +284,18 @@ function eventPlayerDied(name)
 end
 
 function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVelocity)
-    local message = ("You cannot use another box until the current box disappears. Wait 8 seconds")
-    local message2 = ("Now you can use it again")
-
     if boxUsed then
-        return ui.addTextArea(1234, message, name, 350, 330, 150, nil, 0xA32929,0xB54A4A , 1, false)
+        return
     end
 
-    if table.contains(canUseBox, name) then
+    if canUseBox[name] then
         if keyCode == zKey then
             boxPower = tfm.exec.addShamanObject(2, x, y + 10, 90, 0, 2, false, {})
             boxUsed = true
             local timer = a.new("boxUsed", function()
                 tfm.exec.removeObject(boxPower)
                 boxUsed = false
-                ui.addTextArea(1234, message2, name, 350, 375, 150, nil, 0x4E6D49, 0x998041, 1, false)
-            end, 8000, false)
+            end, 5000, false)
         end
     end
 end
@@ -438,8 +433,7 @@ function eventChatCommand(name, cmd)
             tfm.exec.chatMessage("<J>" .. translate(name, "translation_") .. arg[2], name)
         end
     elseif arg[1] == "maplist" then
-        tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " ", 2),
-            name)
+        tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " ", 2),name)
     end
 
     if mod[name] then
@@ -483,8 +477,7 @@ function eventChatCommand(name, cmd)
             tfm.exec.chatMessage("<J>max is 50 noob", name)
         elseif arg[1] == "respawn" and arg[2] ~= nil then
             tfm.exec.respawnPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name,
-                adm[name] and mod[name])
+            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name, adm[name] and mod[name])
             tfm.exec.giveMeep(arg[2], true)
         elseif arg[1] == "ban" and arg[2] ~= nil then
             table.insert(banned, arg[2])
@@ -521,7 +514,7 @@ function eventNewGame(name)
     ui.removeTextArea(51, nil)
     ui.removeTextArea(99, nil)
     ui.removeTextArea(100, nil)
-    ui.removeTextArea(1234, nil)
+    ui.removeTextArea(1234,nil)
 
     for _, name in pairs(banned) do
         tfm.exec.freezePlayer(name)
@@ -579,8 +572,7 @@ function help(name)
     ui.addTextArea(2, "<p align='center'><font size ='14' color='#316CCC'><b>#Walls", name, 235, textArea_y, nil, nil,0x073247, 0x121212, 1, true)
     ui.addTextArea(3, "<p align='center'><V><a href='event:cerrar'><font color='#F93018'><b>X", name, 495, textArea_y, 60,20, 0x073247, 0x121212, 1, true)
     ui.addTextArea(4, translate(name, "help_2"), name, 248, 100, 300, 265, 0, 0, 0, true)
-    ui.addTextArea(6, "<p align='center'><a href='event:commands'><font size ='14' color='#00C17C'><b>Commands", name,
-        375, textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(6, "<p align='center'><a href='event:commands'><font size ='14' color='#00C17C'><b>Commands", name, 375, textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
 end
 
 function commandsHelp(name)
@@ -606,3 +598,5 @@ function commandsHelp(name)
         ui.addTextArea(11, textCommand, name, 248, 100, 300, 265, 0, 0, 0, true)
     end
 end
+
+system.disableChatCommandDisplay(cmd, true)
