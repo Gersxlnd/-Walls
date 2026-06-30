@@ -140,7 +140,7 @@ local mod = { ["Tsohg#1253"] = true, ["Artsyemir#0000"] = true, ["Potjkb#0000"] 
 local maps = {
     7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793, 7938847,7938848, 7938849, 7938850
 };
--- to perm 7942778, 7942780, 7942781, 7942793, 7938848, 7938849, 7938850
+
 tfm.exec.newGame(maps[math.random(#maps)])
 
 local powers = {
@@ -151,11 +151,11 @@ local powers = {
     end,
     freeze = function(playerName)
         tfm.exec.freezePlayer(playerName, true, true)
-        tfm.exec.chatMessage("<J>Bad luck. You are f<ROSE>reezed", playerName)
+        tfm.exec.chatMessage("<J>You are <ROSE>freezed", playerName)
     end,
     cheese = function(playerName)
         tfm.exec.giveCheese(playerName)
-        tfm.exec.chatMessage("<J>Bad luck. You got <ROSE>cheese", playerName)
+        tfm.exec.chatMessage("<J>You got <ROSE>cheese", playerName)
     end,
     transformation = function(playerName)
         tfm.exec.giveTransformations(playerName, true)
@@ -191,11 +191,11 @@ local powers = {
     balloon = function(playerName)
         local color = math.random(1, 4)
         tfm.exec.attachBalloon(playerName, true, color, false, 1)
-        tfm.exec.chatMessage("<J>Congratz you got the most useles power<ROSE> THE BALLOON", playerName)
+        tfm.exec.chatMessage("<ROSE> THE BALLOON", playerName)
     end,
     vampire = function(playerName)
         tfm.exec.setVampirePlayer(playerName, true)
-        tfm.exec.chatMessage("<J>Now you are a <ROSE>vampire. <J>is it bad or good luck?", playerName)
+        tfm.exec.chatMessage("<J>Now you are a <ROSE>vampire.", playerName)
     end
 }
 
@@ -451,7 +451,6 @@ function eventChatCommand(name, cmd)
         tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " ", 2),name)
     end
 
-    -- Comandos compartilhados: mod E adm tem acesso (adm nao precisa estar na tabela mod)
     if mod[name] or adm[name] then
         if arg[1] == "map" and arg[2] ~= nil then
             tfm.exec.newGame(arg[2])
@@ -475,7 +474,6 @@ function eventChatCommand(name, cmd)
         end
     end
 
-    -- Comandos exclusivos de adm
     if adm[name] then
         if arg[1] == "freeze" and arg[2] ~= nil then
             tfm.exec.freezePlayer(arg[2], true, true)
