@@ -260,6 +260,21 @@ function table.contains(tbl, value)
     return false
 end
 
+function unbanPlayer(arg2)
+    if tonumber(arg2) then
+        table.remove(banned, tonumber(arg2))
+    else
+        for i, v in ipairs(banned) do
+            if v == arg2 then
+                table.remove(banned, i)
+                return true
+            end
+        end
+        return false
+    end
+    return true
+end
+
 function eventPlayerDied(name)
     local alivePlayers = {}
 
@@ -403,7 +418,7 @@ function eventLoop(elapsedTime, remainingTime)
         for name, p in pairs(tfm.get.room.playerList) do
             if p.x >= xRightWalls then
                 tfm.exec.killPlayer(name)
-            elseif p.x <= widthRightWalls then
+            elseif p.x <= xLeftWalls + widthLeftWalls then
                 tfm.exec.killPlayer(name)
             end
         end
@@ -436,57 +451,48 @@ function eventChatCommand(name, cmd)
         tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " ", 2),name)
     end
 
-    if mod[name] then
+    -- Comandos compartilhados: mod E adm tem acesso (adm nao precisa estar na tabela mod)
+    if mod[name] or adm[name] then
         if arg[1] == "map" and arg[2] ~= nil then
             tfm.exec.newGame(arg[2])
         elseif arg[1] == "map" and arg[2] == nil then
             tfm.exec.newGame(maps[math.random(#maps)])
         elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
             tfm.exec.killPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>[#Walls] </VI><ROSE>" .. arg[2] .. " <J>got killed by:<ROSE> " .. name, adm[name])
+            tfm.exec.chatMessage("<VI>[#Walls] </VI><ROSE>" .. arg[2] .. " <J>got killed by:<ROSE> " .. name, nil)
         elseif arg[1] == "ban" and arg[2] ~= nil then
             table.insert(banned, arg[2])
             tfm.exec.killPlayer(arg[2])
             tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " got banned. Reason: " .. table.concat(arg, " ", 3))
-        elseif arg[1] == "unban" and tonumber(arg[2]) then
-            table.remove(banned, arg[2])
+        elseif arg[1] == "unban" and arg[2] ~= nil then
+            if unbanPlayer(arg[2]) then
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " was unbanned.", name)
+            else
+                tfm.exec.chatMessage("<VI>[#Walls]<J> Player not found in ban list.", name)
+            end
         elseif arg[1] == "banneds" then
             tfm.exec.chatMessage(table.concat(banned, " "), name)
         end
     end
 
+    -- Comandos exclusivos de adm
     if adm[name] then
         if arg[1] == "freeze" and arg[2] ~= nil then
             tfm.exec.freezePlayer(arg[2], true, true)
-            tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" .. arg[2] .. " got freezed by: " .. name, adm[name])
-        elseif arg[1] == "map" and arg[2] ~= nil then
-            tfm.exec.newGame(arg[2])
-        elseif arg[1] == "map" and arg[2] == nil then
-            tfm.exec.newGame(maps[math.random(#maps)])
-        elseif arg[1] == "kill" and arg[2] ~= nil then --must be used as punishment of hacking or whatever never to have advantage
-            tfm.exec.killPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>[#Walls] </VI><ROSE>" .. arg[2] .. " <J>got killed by:<ROSE> " .. name, adm[name])
+            tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" .. arg[2] .. " got freezed by: " .. name, nil)
         elseif arg[1] == "size" and arg[2] ~= nil and arg[3] then
             tfm.exec.changePlayerSize(arg[2], arg[3])
         elseif arg[1] == "ms" then
             tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" .. table.concat(arg, " ", 2), nil)
-        elseif arg[1] == "maxplayers" and tonumber(arg[2]) <= 50 then
+        elseif arg[1] == "maxplayers" and tonumber(arg[2]) ~= nil and tonumber(arg[2]) <= 50 then
             tfm.exec.setRoomMaxPlayers(arg[2])
-            tfm.exec.chatMessage("<VI> Room limite is now: " .. arg[2], adm[name] and mod[name])
-        elseif arg[1] == "maxplayers" and tonumber(arg[2]) > 50 then
+            tfm.exec.chatMessage("<VI> Room limite is now: " .. arg[2], nil)
+        elseif arg[1] == "maxplayers" and tonumber(arg[2]) ~= nil and tonumber(arg[2]) > 50 then
             tfm.exec.chatMessage("<J>max is 50 noob", name)
         elseif arg[1] == "respawn" and arg[2] ~= nil then
             tfm.exec.respawnPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name, adm[name] and mod[name])
+            tfm.exec.chatMessage("<VI>!Player:<J> " .. arg[2] .. " <VI>respawned by:<J> " .. name, nil)
             tfm.exec.giveMeep(arg[2], true)
-        elseif arg[1] == "ban" and arg[2] ~= nil then
-            table.insert(banned, arg[2])
-            tfm.exec.killPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " got banned. Reason: " .. table.concat(arg, " ", 3))
-        elseif arg[1] == "unban" and tonumber(arg[2]) then
-            table.remove(banned, arg[2])
-        elseif arg[1] == "banneds" then
-            tfm.exec.chatMessage(table.concat(banned, " "), name)
         elseif arg[1] == "time" and tonumber(arg[2]) ~= nil then
             tfm.exec.setGameTime(arg[2], true)
         elseif arg[1] == "time" and tonumber(arg[2]) == nil then
@@ -579,7 +585,7 @@ function commandsHelp(name)
     local textArea_y = 50
     local textCommand = translate(name, "commands")
     local modCommandsMessage =
-    "<VI>Mod commands</VI> <br><br> <BV>!ban [player] [reason] or !unban [number] -</BV> <J>Ban or unban a player<br><br> (use !banneds to see banned players and use the position in the line to unban them).</J> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
+    "<VI>Mod commands</VI> <br><br> <BV>!ban [player] [reason] or !unban [player or number] -</BV> <J>Ban or unban a player<br><br> (you can unban by player name, or use !banneds to see the list and unban by position).</J> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
 
     local admCommandMessage =
     "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [number 1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
