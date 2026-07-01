@@ -143,7 +143,8 @@ local maps = {
 
 tfm.exec.newGame(maps[math.random(#maps)])
 
-local powers = {
+local powers
+powers = {
     size = function(playerName)
         local randomSize = math.random(1, 9) / 10
         tfm.exec.changePlayerSize(playerName, randomSize)
@@ -196,6 +197,24 @@ local powers = {
     vampire = function(playerName)
         tfm.exec.setVampirePlayer(playerName, true)
         tfm.exec.chatMessage("<J>Now you are a <ROSE>vampire.", playerName)
+    end,
+    chaos = function(playerName)
+        tfm.exec.chatMessage("<VI>[#Walls] </VI><ROSE>CHAOS MODE!<J> Everyone just got a random power!", nil)
+        local otherPowers = {}
+        for key, power in pairs(powers) do
+            if key ~= "chaos" then
+                otherPowers[key] = power
+            end
+        end
+        if next(otherPowers) == nil then
+            return 
+        end
+        for name, playerData in next, tfm.get.room.playerList do
+            if not playerData.isDead then
+                local randomPower = table.random(otherPowers)
+                randomPower(name)
+            end
+        end
     end
 }
 
@@ -499,6 +518,8 @@ function eventChatCommand(name, cmd)
             tfm.exec.linkMice(arg[2], arg[3], true)
         elseif arg[1] == "unlink" and arg[2] ~= nil and arg[3] ~= nil then
             tfm.exec.linkMice(arg[2], arg[3], false)
+        elseif arg[1] == "chaos" then
+            powers.chaos(name)
         end
     end
 end
