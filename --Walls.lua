@@ -129,6 +129,8 @@ local counter = 1000;
 local max_time = 170
 local s = 1
 isBonusTaken = false
+local BONUS_MARGIN = 5
+local mapPlatforms = {}
 local banned = {}
 local zKey = 90
 local canUseBox = {}
@@ -138,7 +140,7 @@ local adm = { ["Rafapkzz#8588"] = true, ["Brsowl#0000"] = true, ["Rianmojang1#00
 local mod = { ["Tsohg#1253"] = true, ["Artsyemir#0000"] = true, ["Potjkb#0000"] = true }
 
 local maps = {
-    7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793, 7938847,7938848, 7938849, 7938850, 7964739, 7982706, 7982707
+    7983832, 7983834,7947056, 7507808, 7507577, 7508407, 7508527, 7507436, 7497394, 7507299, 7507681, 7507669, 7507735, 7937063, 7946764, 7946765, 7947711, 7947712, 7947713, 7947714, 7506270, 7506352, 7506584, 7506587, 7507050, 7508721, 7948209, 7948212, 7948204, 7938846, 7942778, 7942780, 7942781, 7942793, 7938847,7938848, 7938849, 7938850, 7964739, 7982706, 7982707
 };
 
 tfm.exec.newGame(maps[math.random(#maps)])
@@ -218,9 +220,56 @@ powers = {
     end
 }
 
+--Parses the current map's XML and extracts every ground platform (<S>) as {x, y, halfL, halfH, angle}
+function parsePlatforms(xml)
+    local platforms = {}
+    if not xml or xml == "" then
+        return platforms
+    end
+
+    for tag in xml:gmatch("<S%s+(.-)/>") do
+        local x = tonumber(tag:match('X="(-?%d+%.?%d*)"'))
+        local y = tonumber(tag:match('Y="(-?%d+%.?%d*)"'))
+        local l = tonumber(tag:match('L="(-?%d+%.?%d*)"'))
+        local h = tonumber(tag:match('H="(-?%d+%.?%d*)"'))
+        local r = tonumber(tag:match('r="(-?%d+%.?%d*)"')) or 0
+
+        if x and y and l and h then
+            platforms[#platforms + 1] = { x = x, y = y, halfL = l / 2, halfH = h / 2, angle = math.rad(r) }
+        end
+    end
+
+    return platforms
+end
+
+--Checks if a point falls inside any map platform (rotation-aware, with a BONUS_MARGIN buffer)
+function isInsidePlatform(px, py)
+    for _, plat in next, mapPlatforms do
+        local dx = px - plat.x
+        local dy = py - plat.y
+
+        local cosA = math.cos(-plat.angle)
+        local sinA = math.sin(-plat.angle)
+        local localX = dx * cosA - dy * sinA
+        local localY = dx * sinA + dy * cosA
+
+        if math.abs(localX) <= plat.halfL + BONUS_MARGIN and math.abs(localY) <= plat.halfH + BONUS_MARGIN then
+            return true
+        end
+    end
+    return false
+end
+
 function addBonus()
-    local xBonus = math.random(50, 750)
-    local yBonus = math.random(50, 350)
+    local xBonus, yBonus
+    local attempts = 0
+
+    repeat
+        xBonus = math.random(50, 750)
+        yBonus = math.random(50, 350)
+        attempts = attempts + 1
+    until not isInsidePlatform(xBonus, yBonus) or attempts >= 30
+
     local playerWhoGotBonus = nil
 
     tfm.exec.addBonus(0, xBonus, yBonus, 3, 0, false, nil)
@@ -529,10 +578,11 @@ tfm.exec.setRoomMaxPlayers(25)
 function eventNewGame(name)
     isBonusTaken = false
     xLeftWalls = 4 --x1
-    widthLeftWalls = 4 -- width 
+    widthLeftWalls = 4 -- width
     xRightWalls = 796 --x
     widthRightWalls = 4 -- width
     canUseBox = {}
+    mapPlatforms = parsePlatforms(tfm.get.room.xmlMapInfo and tfm.get.room.xmlMapInfo.xml)
     addBonus()
 
     ui.removeTextArea(50, nil)
