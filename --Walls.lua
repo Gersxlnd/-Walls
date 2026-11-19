@@ -39,9 +39,10 @@ local translations = {
         close_p = "Fechar",
         help_1 = "<p align='center'><font size ='14' color='#00C17C'>Ajuda<b>",
         help_2 =
-        "<p align = 'center'><VP>  Bem vindo ao<BV> #Walls<VP>! \n Neste minigame você tem que estar atento aos meeps dos oponentes.<br><br>Se você quer ganhar, derrote seus oponentes e seja o ultimo rato vivo! <br> <br><ROSE>#Walls</ROSE><J> é um module de código aberto. Se você quiser contribuir, cheque o nosso repositorio github.com/Gersxlnd/-Walls <br><br><ROSE>Fique atento com as paredes! <br><br>Explosões também surgirão conforme você avança!<CS> <br> <br> Criado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> & <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
+        "<p align = 'center'><VP>  Bem vindo ao<BV> #Walls<VP>! \n Neste minigame você tem que estar atento aos meeps dos oponentes.<br><br>Se você quer ganhar, derrote seus oponentes e seja o ultimo rato vivo! <br> <br><ROSE>#Walls</ROSE><J> é um module de código aberto. Se você quiser contribuir, cheque o nosso repositorio github.com/Gersxlnd/-Walls <br><br><ROSE>Fique atento com as paredes! <br><br>Explosões também surgirão conforme você avança!<CS> <br> <br> Criado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS>, <R> Brsowl#0000<CS> & <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
         mapList = "Lista de map atual: ",
         translation_ = "Você mudou seu idioma padrão para: ",
+        invalidLang = "Idioma inválido. Disponíveis: ",
         won = " ganhou!",
         noWon = "<J>Ninguém ganhou!",
         commands =
@@ -56,9 +57,10 @@ local translations = {
         close_p = "Close",
         help_1 = "<p align='center'><font size ='14' color='#00C17C'>Help<b>",
         help_2 =
-        "<p align = 'center'> <VP>  Welcome to the<BV> #Walls<VP>! \n <br> In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <br><ROSE>#Walls</ROSE><J> is an open source module. If you want to contribute check our repository github.com/Gersxlnd/-Walls <br><br><ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000.<CS><J>",
+        "<p align = 'center'> <VP>  Welcome to the<BV> #Walls<VP>! \n <br> In this minigame you have to be careful about the meep your opponents.<br><br>If you want to win, defeat your opponents and be the last living mouse! <br> <br><ROSE>#Walls</ROSE><J> is an open source module. If you want to contribute check our repository github.com/Gersxlnd/-Walls <br><br><ROSE>Watch out for the walls! <br><br>Explosions will also come up as you go!<CS> <br> <br> Created by: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS>, <R> Brsowl#0000<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Credits: <R> Hugotitas#0000.<CS><J>",
         mapList = "Current map list: ",
         translation_ = "You changed your default language to: ",
+        invalidLang = "Invalid language. Available: ",
         won = " won!",
         noWon = "<J>No one won!",
         commands =
@@ -74,9 +76,10 @@ local translations = {
         close_p = "Fermer",
         help_1 = "<p align='center'><font size ='14' color='#00C17C'>Aide<b>",
         help_2 =
-        "<p align = 'center'> <VP>  Bienvenue dans<BV> #Walls<VP>! \n <br> Dans ce mini-jeu vous devez faire attention aux meep de vos adversaires. <br><br>Si vous voulez gagner, battez vos adversaires et soyez la dernière souris en vie ! <br> <br><ROSE>#Walls</ROSE><J> est un module open source. Si vous voulez contribuer, allez voir notre répertoire : github.com/Gersxlnd/-Walls <br><br><ROSE>Attention aux murs ! <br><br>Des explosions vont se produire au fur et à mesure! <CS> <br> <br> Créé par : <R> Rafapkzz#8588<CS>, <R> Brsowl#0000<CS> et <R>Rianmojang1#0000<CS>.<CS> <br> <br > Crédits: <R> Hugotitas#0000.<CS><J>",
+        "<p align = 'center'> <VP>  Bienvenue dans<BV> #Walls<VP>! \n <br> Dans ce mini-jeu vous devez faire attention aux meep de vos adversaires. <br><br>Si vous voulez gagner, battez vos adversaires et soyez la dernière souris en vie ! <br> <br><ROSE>#Walls</ROSE><J> est un module open source. Si vous voulez contribuer, allez voir notre répertoire : github.com/Gersxlnd/-Walls <br><br><ROSE>Attention aux murs ! <br><br>Des explosions vont se produire au fur et à mesure! <CS> <br> <br> Créé par : <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS>, <R> Brsowl#0000<CS> et <R>Rianmojang1#0000<CS>.<CS> <br> <br > Crédits: <R> Hugotitas#0000.<CS><J>",
         mapList = "Liste des cartes actuelles: ",
         translation_ = "Votre nouvelle langue par défaut est : ",
+        invalidLang = "Langue invalide. Disponibles : ",
         won = " a gagné!",
         noWon = "<J>Personne n'a gagné!",
         commands =
@@ -91,9 +94,10 @@ local translations = {
         close_p = "Cerrar",
         help_1 = "<p align='center'><font size ='14' color='#00C17C'>Ayuda<b>",
         help_2 =
-        "<p align = 'center'> <VP>  ¡Bienvenido a<BV> #Walls<VP>! \n <br> En este minijuego debes tener cuidado con los meeps de tus oponentes..<br><br>Si quieres ganar, derrotar a tus oponentes y ser el último ratón vivo! <br> <br><ROSE>#Walls</ROSE><J>  es un código fuente abierto. Si quieres contribuir, consulta nuestro repositorio github.com/ Gersxlnd /-Walls <br><br><ROSE>¡Cuidado con las paredes! <br><br>¡También surgirán explosiones a medida que avanzas!<CS> <br> <br> Creado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> and <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
+        "<p align = 'center'> <VP>  ¡Bienvenido a<BV> #Walls<VP>! \n <br> En este minijuego debes tener cuidado con los meeps de tus oponentes..<br><br>Si quieres ganar, derrotar a tus oponentes y ser el último ratón vivo! <br> <br><ROSE>#Walls</ROSE><J>  es un código fuente abierto. Si quieres contribuir, consulta nuestro repositorio github.com/Gersxlnd/-Walls <br><br><ROSE>¡Cuidado con las paredes! <br><br>¡También surgirán explosiones a medida que avanzas!<CS> <br> <br> Creado por: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS>, <R> Brsowl#0000<CS> y <R>Rianmojang1#0000<CS>.<CS> <br> <br > Créditos: <R> Hugotitas#0000.<CS><J>",
         mapList = "Lista de mapas actual: ",
         translation_ = "Cambiaste tu idioma predeterminado a: ",
+        invalidLang = "Idioma inválido. Disponibles: ",
         won = " ganó!",
         noWon = "<J>Nadie ganó!",
         commands =
@@ -108,9 +112,10 @@ local translations = {
         close_p = "Kapat",
         help_1 = "<p align='center'><font size ='14' color='#00C17C'>Yardım<b>",
         help_2 =
-        "<p align = 'center'> <VP><BV> #Walls'a<VP> Hoş geldiniz<VP>! \n <br> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <br> <br><ROSE>#Walls</ROSE><J> açık kaynak kodudur. Katkıda bulunmak istiyorsanız kaynağımıza göz atın github.com/Gersxlnd/-Walls <br><br><ROSE> Duvarlara dikkat edin! <br><br> Siz ilerledikçe patlamalar da ortaya çıkacak!<CS> <br> <br>Tarafından oluşturuldu: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS> ve <R>Rianmojang1#0000<CS>.<CS> <br> <br > Katkıda bulunanlar: <R> Hugotitas#0000.<CS><J>",
+        "<p align = 'center'> <VP><BV> #Walls'a<VP> Hoş geldiniz<VP>! \n <br> Bu mini oyunda rakiplerinizin meep gücüne düşmemeye dikkat etmeniz gerekecek. Kazanmak istiyorsanız hayatta kalan son fare olun! <br> <br><ROSE>#Walls</ROSE><J> açık kaynak kodudur. Katkıda bulunmak istiyorsanız kaynağımıza göz atın github.com/Gersxlnd/-Walls <br><br><ROSE> Duvarlara dikkat edin! <br><br> Siz ilerledikçe patlamalar da ortaya çıkacak!<CS> <br> <br>Tarafından oluşturuldu: <R> Rafapkzz#8588<CS>, <R> Pro#1435<CS>, <R> Brsowl#0000<CS> ve <R>Rianmojang1#0000<CS>.<CS> <br> <br > Katkıda bulunanlar: <R> Hugotitas#0000.<CS><J>",
         mapList = "Güncel harita listesi: ",
         translation_ = "Varsayılan dilinizi değiştirdiniz: ",
+        invalidLang = "Geçersiz dil. Mevcut diller: ",
         won = " kazandı!",
         noWon = "<J>Kimse kazanmadı!",
         commands =
@@ -118,10 +123,11 @@ local translations = {
     },
 }
 
-xLeftWalls = -267 --x1
-widthLeftWalls = 262 -- width
-xRightWalls = 809 --x
-widthRightWalls = 262 -- width
+--Wall positions; reset every round in eventNewGame (same values)
+xLeftWalls = 4 --x1
+widthLeftWalls = 4 -- width
+xRightWalls = 796 --x
+widthRightWalls = 4 -- width
 data = {}
 local time = os.time();
 local run = os.time();
@@ -129,12 +135,17 @@ local counter = 1000;
 local max_time = 170
 local s = 1
 isBonusTaken = false
+roundEnded = false
+warning1Sent = false
+warning2Sent = false
 local BONUS_MARGIN = 5
 local mapPlatforms = {}
 local banned = {}
+local banInfo = {}  --banInfo[nick] = { id = number, reason = string, by = nick }
+local nextBanId = 1 --ban ids never repeat, even after an unban
 local zKey = 90
 local canUseBox = {}
-boxUsed = false
+boxUsed = {}
 local adm = { ["Rafapkzz#8588"] = true, ["Brsowl#0000"] = true, ["Rianmojang1#0000"] = true, ["Ghost#6398"] = true, ["Lays#1146"] = true }
 
 local mod = { ["Tsohg#1253"] = true, ["Artsyemir#0000"] = true, ["Potjkb#0000"] = true }
@@ -144,6 +155,16 @@ local maps = {
 };
 
 tfm.exec.newGame(maps[math.random(#maps)])
+
+--Loads a random official map only once until it actually starts (eventNewGame clears the lock).
+--The lock expires after 5s so the module can't get stuck if a map fails to load.
+local loadingMapSince = nil
+function loadRandomMap()
+    if loadingMapSince and os.time() - loadingMapSince < 5000 then return end
+    loadingMapSince = os.time()
+    tfm.exec.newGame(maps[math.random(#maps)])
+end
+function clearMapLock() loadingMapSince = nil end
 
 local powers
 powers = {
@@ -166,8 +187,8 @@ powers = {
     end,
     link = function(playerName)
         local playerList = {}
-        for name, _ in next, tfm.get.room.playerList do
-            if name ~= playerName and not table.contains(banned, name) then
+        for name, info in next, tfm.get.room.playerList do
+            if name ~= playerName and not info.isDead and not isBanned(name) then
                 playerList[#playerList + 1] = name
             end
         end
@@ -176,7 +197,7 @@ powers = {
             tfm.exec.linkMice(playerName, playerTwo, true)
             tfm.exec.chatMessage("<J>You got linked with<ROSE> " .. playerTwo .. " <J>is it good? xD", playerName)
         else
-            tfm.exec.chatMessage("<J>There is no other player to link.")
+            tfm.exec.chatMessage("<J>There is no other player to link.", playerName)
         end
     end,
     box = function(playerName)
@@ -187,9 +208,9 @@ powers = {
         for name, _ in next, tfm.get.room.playerList do
             if name ~= playerName then
                 tfm.exec.setPlayerNightMode(true, name)
-                tfm.exec.chatMessage("<J>Everybody with night mode except<ROSE> " .. playerName)
             end
         end
+        tfm.exec.chatMessage("<J>Everybody with night mode except<ROSE> " .. playerName)
     end,
     balloon = function(playerName)
         local color = math.random(1, 4)
@@ -270,8 +291,6 @@ function addBonus()
         attempts = attempts + 1
     until not isInsidePlatform(xBonus, yBonus) or attempts >= 30
 
-    local playerWhoGotBonus = nil
-
     tfm.exec.addBonus(0, xBonus, yBonus, 3, 0, false, nil)
     bonusImage = tfm.exec.addImage("16bc54cf1cd.png", "!1", xBonus, yBonus, nil, 1, 1, 0, 1, 0.5, 0.5, false)
 end
@@ -282,7 +301,7 @@ function eventPlayerBonusGrabbed(playerName, bonusID)
     if bonusID == 3 then
         playerWhoGotBonus = playerName
         isBonusTaken = true
-        tfm.exec.removeBonus(0, nil)
+        tfm.exec.removeBonus(3, nil) --same id used in addBonus
     end
 
     if bonusImage then
@@ -328,64 +347,161 @@ function table.contains(tbl, value)
     return false
 end
 
-function unbanPlayer(arg2)
-    if tonumber(arg2) then
-        table.remove(banned, tonumber(arg2))
-    else
-        for i, v in ipairs(banned) do
-            if v == arg2 then
-                table.remove(banned, i)
-                return true
-            end
+--Finds banned players by nick (case-insensitive). "Name#1234" must match exactly; "Name" matches any tag.
+--Returns a list of {index, nick}.
+function findBanned(nick)
+    local query = nick:lower()
+    local hasTag = query:find("#", 1, true) ~= nil
+    local found = {}
+    for i, v in ipairs(banned) do
+        local candidate = v:lower()
+        if not hasTag then
+            candidate = candidate:match("^[^#]*")
         end
-        return false
+        if candidate == query then
+            found[#found + 1] = { index = i, nick = v }
+        end
     end
-    return true
+    return found
 end
 
-function eventPlayerDied(name)
+--True if this exact player (case-insensitive) is banned
+function isBanned(playerName)
+    local lowered = playerName:lower()
+    for _, v in ipairs(banned) do
+        if v:lower() == lowered then
+            return true
+        end
+    end
+    return false
+end
+
+--Finds a player in the room by nick, case-insensitive. "Name#1234" must match exactly;
+--"Name" works when only one player in the room has that name. Returns the real room nick or nil.
+function resolvePlayerName(nick)
+    local query = nick:lower()
+    local hasTag = query:find("#", 1, true) ~= nil
+    local found = nil
+    for roomName in next, tfm.get.room.playerList do
+        local candidate = roomName:lower()
+        if not hasTag then
+            candidate = candidate:match("^[^#]*")
+        end
+        if candidate == query then
+            if found then return nil end --ambiguous
+            found = roomName
+        end
+    end
+    return found
+end
+
+--Unbans by nick. Returns the unbanned nick, or nil + list of matches when it's not exactly one.
+function unbanPlayer(nick)
+    local found = findBanned(nick)
+    if #found ~= 1 then
+        return nil, found
+    end
+    table.remove(banned, found[1].index)
+    banInfo[found[1].nick] = nil
+    return found[1].nick
+end
+
+--Ban list panel (mods/admins). Text areas 30-32; each row has a clickable [unban].
+local BAN_PANEL = { 30, 31, 32 }
+
+local function escapeHtml(s)
+    return (s:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"))
+end
+
+function showBanList(name)
+    local rows = {}
+    for _, nick in ipairs(banned) do
+        local info = banInfo[nick] or {}
+        local reason = (info.reason and info.reason ~= "") and escapeHtml(info.reason) or "-"
+        rows[#rows + 1] = string.format(
+            "<J>#%s</J> <ROSE>%s</ROSE> <a href='event:unban_%s'><R>[unban]</R></a><br><N>  Reason: %s<br>  By: %s</N>",
+            tostring(info.id or "?"), nick, tostring(info.id or nick), reason, info.by or "-")
+    end
+    local body = #rows > 0 and table.concat(rows, "<br><br>") or "<N>No banned players.</N>"
+
+    ui.addTextArea(BAN_PANEL[1], "<p align='center'><font size='14' color='#F93018'><b>Banned players (" .. #banned .. ")</b></font></p>",
+        name, 235, 50, 320, 25, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(BAN_PANEL[2], "<p align='center'><a href='event:closeBans'><font color='#F93018'><b>X</b></font></a></p>",
+        name, 525, 50, 30, 25, 0x073247, 0x121212, 1, true)
+    ui.addTextArea(BAN_PANEL[3], body, name, 235, 85, 320, 270, 0x073247, 0x121212, 1, true)
+end
+
+function closeBanList(name)
+    for _, id in ipairs(BAN_PANEL) do
+        ui.removeTextArea(id, name)
+    end
+end
+
+--Checks if the round has a winner. ignoreName: player that must not count as alive (e.g. who just left the room)
+function checkWinner(name, ignoreName)
+    if roundEnded then return end
+
     local alivePlayers = {}
 
     for k, v in pairs(tfm.get.room.playerList) do
-        if not v.isDead then
+        if k ~= ignoreName and not v.isDead and not isBanned(k) then
             table.insert(alivePlayers, k)
         end
     end
 
     if #alivePlayers == 1 then
+        roundEnded = true
         local winner = alivePlayers[1]
 
         tfm.exec.giveCheese(winner)
         tfm.exec.playerVictory(winner)
         tfm.exec.setGameTime(3)
-        tfm.exec.chatMessage("<J>" .. winner .. translate(name, "won"))
+        chatTranslated("won", "<J>" .. winner)
     elseif #alivePlayers == 0 then
-        tfm.exec.setGameTime(3)
-        tfm.exec.newGame(maps[math.random(#maps)])
-        tfm.exec.chatMessage("<J>" .. translate(name, "noWon"))
+        roundEnded = true
+        loadRandomMap()
+        chatTranslated("noWon", "<J>")
     end
 end
 
+--Sends a translated message to every player, each one in their own language
+function chatTranslated(key, prefix)
+    for playerName in next, tfm.get.room.playerList do
+        tfm.exec.chatMessage((prefix or "") .. translate(playerName, key), playerName)
+    end
+end
+
+function eventPlayerDied(name)
+    checkWinner(name)
+end
+
+function eventPlayerLeft(name)
+    local player = tfm.get.room.playerList[name]
+    if player and player.isDead then return end --a dead player leaving changes nothing
+    checkWinner(name, name)
+end
+
 function eventKeyboard(name, keyCode, down, x, y, xPlayerVelocity, yPlayerVelocity)
-    if boxUsed then
+    if boxUsed[name] then --cooldown is per player
         return
     end
 
     if canUseBox[name] then
         if keyCode == zKey then
-            boxPower = tfm.exec.addShamanObject(2, x, y + 10, 90, 0, 2, false, {})
-            boxUsed = true
-            local timer = a.new("boxUsed", function()
+            local boxPower = tfm.exec.addShamanObject(2, x, y + 10, 90, 0, 2, false, {})
+            boxUsed[name] = true
+            local timer = a.new("box_" .. name, function()
                 tfm.exec.removeObject(boxPower)
-                boxUsed = false
+                boxUsed[name] = nil
             end, 5000, false)
         end
     end
 end
 
 function eventPlayerMeep(playerName, x, y)
-    meepImage = tfm.exec.addImage("18b633bf5ce.png", "!0", x - 20, y - 20, playerName, 0.23, 0.26, -0.17, 1, 0, 0, false)
-    local timer = a.new("meepImage", function()
+    local meepImage = tfm.exec.addImage("18b633bf5ce.png", "!0", x - 20, y - 20, playerName, 0.23, 0.26, -0.17, 1, 0, 0, false)
+    --unique timer id per image, so simultaneous meeps don't overwrite each other's timer
+    local timer = a.new("img_" .. tostring(meepImage), function()
         tfm.exec.removeImage(meepImage)
     end, 300, false)
 end
@@ -393,7 +509,7 @@ end
 function eventLoop(elapsedTime, remainingTime)
     Timer.process()
     if remainingTime <= 0 then
-        tfm.exec.newGame(maps[math.random(#maps)])
+        loadRandomMap()
     end
 
     if remainingTime <= 3000 then
@@ -404,13 +520,16 @@ function eventLoop(elapsedTime, remainingTime)
         end
     end
 
-    if elapsedTime >= 60000 and elapsedTime <= 60500 then
+    --each warning is sent exactly once per round (flags reset in eventNewGame)
+    if elapsedTime >= 60000 and not warning1Sent then
+        warning1Sent = true
         table.foreach(tfm.get.room.playerList, function(playerName)
             tfm.exec.chatMessage(translate(playerName, 'warning1'), playerName)
         end)
     end
 
-    if elapsedTime >= 100000 and elapsedTime <= 100500 then
+    if elapsedTime >= 100000 and not warning2Sent then
+        warning2Sent = true
         table.foreach(tfm.get.room.playerList, function(playerName)
             tfm.exec.chatMessage(translate(playerName, 'warning2'), playerName)
         end)
@@ -441,14 +560,19 @@ function eventLoop(elapsedTime, remainingTime)
 
     if elapsedTime >= 65000 then
         if run < os.time() - 5000 then
-            xex = math.random(widthRightWalls, xRightWalls)
-            yex = math.random(0, 380)
-            tfm.exec.explosion(xex, yex, 50, 100, true)
-            explosionImage = tfm.exec.addImage("184e45e04bf.png", "!0", xex, yex, nil, 0.14, 0.16, 0.00, 1, 0, 0, false)
-            local timer = a.new("explosionImage", function()
-                tfm.exec.removeImage(explosionImage)
-            end, 500, false)
-            tfm.exec.displayParticle(12, xex, yex)
+            --explosions only in the open area between the two walls
+            local leftEdge = xLeftWalls + widthLeftWalls
+            local rightEdge = xRightWalls
+            if leftEdge < rightEdge then --walls already met: no room left, skip
+                xex = math.random(leftEdge, rightEdge)
+                yex = math.random(0, 380)
+                tfm.exec.explosion(xex, yex, 50, 100, true)
+                local explosionImage = tfm.exec.addImage("184e45e04bf.png", "!0", xex, yex, nil, 0.14, 0.16, 0.00, 1, 0, 0, false)
+                local timer = a.new("img_" .. tostring(explosionImage), function()
+                    tfm.exec.removeImage(explosionImage)
+                end, 500, false)
+                tfm.exec.displayParticle(12, xex, yex)
+            end
             run = os.time();
         end
     end
@@ -456,7 +580,11 @@ function eventLoop(elapsedTime, remainingTime)
         tfm.exec.setGameTime(max_time)
         for k, v in next, tfm.get.room.playerList do
             tfm.exec.respawnPlayer(k) -- As vezes buga e alguem morre
-            tfm.exec.giveMeep(k)
+            if isBanned(k) then
+                tfm.exec.freezePlayer(k, true)
+            else
+                tfm.exec.giveMeep(k)
+            end
         end
     end
 
@@ -464,9 +592,8 @@ function eventLoop(elapsedTime, remainingTime)
         if time < os.time() - 500 then
             ui.addTextArea(99, "", nil, xLeftWalls, -576, widthLeftWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
             widthLeftWalls = widthLeftWalls + 6
-            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
             widthRightWalls = widthRightWalls + 6
-            xRightWalls = xRightWalls - 3
+            xRightWalls = xRightWalls - 6
             time = os.time();
             ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
         end
@@ -476,7 +603,6 @@ function eventLoop(elapsedTime, remainingTime)
         if time < os.time() - 1000 then
             ui.addTextArea(99, "", nil, xLeftWalls, -576, widthLeftWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
             widthLeftWalls = widthLeftWalls + 3
-            ui.addTextArea(100, "", nil, xRightWalls, -575, widthRightWalls, 1360, 0x6a7495, 0x6a7495, 1, true)
             widthRightWalls = widthRightWalls + 3
             xRightWalls = xRightWalls - 3
             time = os.time();
@@ -505,18 +631,25 @@ function eventChatCommand(name, cmd)
     elseif arg[1] == "snow" then
         tfm.exec.snow(0, 1)
     elseif arg[1] == "langue" then
-        if arg[2] then
-            arg[2] = arg[2]:lower()
+        local lang = arg[2] and arg[2]:lower()
 
+        if lang and translations[lang] then
             if not data[name] then
                 data[name] = {}
             end
 
-            data[name].lang = (translations[arg[2]] and arg[2] or data[name].lang)
-            tfm.exec.chatMessage("<J>" .. translate(name, "translation_") .. arg[2], name)
+            data[name].lang = lang
+            tfm.exec.chatMessage("<J>" .. translate(name, "translation_") .. lang, name)
+        else --missing or unknown language: list the available ones
+            local available = {}
+            for code in next, translations do
+                available[#available + 1] = code
+            end
+            table.sort(available)
+            tfm.exec.chatMessage("<R>" .. translate(name, "invalidLang") .. table.concat(available, ", "), name)
         end
     elseif arg[1] == "maplist" then
-        tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " ", 2),name)
+        tfm.exec.chatMessage("<VI>[#Walls] " .. translate(name, "mapList") .. "</VI><J>" .. table.concat(maps, " "), name)
     end
 
     if mod[name] or adm[name] then
@@ -528,17 +661,33 @@ function eventChatCommand(name, cmd)
             tfm.exec.killPlayer(arg[2])
             tfm.exec.chatMessage("<VI>[#Walls] </VI><ROSE>" .. arg[2] .. " <J>got killed by:<ROSE> " .. name, nil)
         elseif arg[1] == "ban" and arg[2] ~= nil then
-            table.insert(banned, arg[2])
-            tfm.exec.killPlayer(arg[2])
-            tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " got banned. Reason: " .. table.concat(arg, " ", 3))
+            --use the real nick from the room (right capitalization); offline players need the full Name#1234
+            local target = resolvePlayerName(arg[2]) or arg[2]
+            if not target:find("#", 1, true) then
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " not found in the room. Use the full nick (Name#1234).", name)
+            elseif isBanned(target) then
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. target .. " is already banned.", name)
+            else
+                local reason = table.concat(arg, " ", 3)
+                table.insert(banned, target)
+                banInfo[target] = { id = nextBanId, reason = reason, by = name }
+                nextBanId = nextBanId + 1
+                tfm.exec.killPlayer(target)
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. target .. " got banned. Reason: " .. reason)
+            end
         elseif arg[1] == "unban" and arg[2] ~= nil then
-            if unbanPlayer(arg[2]) then
-                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. arg[2] .. " was unbanned.", name)
+            local unbanned, matches = unbanPlayer(arg[2])
+            if unbanned then
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. unbanned .. " was unbanned.", name)
+            elseif #matches > 1 then
+                local nicks = {}
+                for _, m in ipairs(matches) do nicks[#nicks + 1] = m.nick end
+                tfm.exec.chatMessage("<VI>[#Walls]<J> More than one banned player matches, use the full nick: " .. table.concat(nicks, ", "), name)
             else
                 tfm.exec.chatMessage("<VI>[#Walls]<J> Player not found in ban list.", name)
             end
         elseif arg[1] == "banneds" then
-            tfm.exec.chatMessage(table.concat(banned, " "), name)
+            showBanList(name)
         end
     end
 
@@ -546,8 +695,21 @@ function eventChatCommand(name, cmd)
         if arg[1] == "freeze" and arg[2] ~= nil then
             tfm.exec.freezePlayer(arg[2], true, true)
             tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" .. arg[2] .. " got freezed by: " .. name, nil)
-        elseif arg[1] == "size" and arg[2] ~= nil and arg[3] then
-            tfm.exec.changePlayerSize(arg[2], arg[3])
+        elseif arg[1] == "size" and arg[2] ~= nil then
+            local target = resolvePlayerName(arg[2]) or arg[2]
+            local size
+            if arg[3] and arg[3]:lower() == "random" then
+                size = math.random(1, 50) / 10 --0.1 to 5.0
+            else
+                size = tonumber(arg[3])
+            end
+
+            if size and size >= 0.1 and size <= 5 then
+                tfm.exec.changePlayerSize(target, size)
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. target .. " size is now: " .. size, name)
+            else
+                tfm.exec.chatMessage("<J>Usage: !size [player] [0.1 - 5] or !size [player] random", name)
+            end
         elseif arg[1] == "ms" then
             tfm.exec.chatMessage("<VI>[#Walls] </VI><J>" .. table.concat(arg, " ", 2), nil)
         elseif arg[1] == "maxplayers" and tonumber(arg[2]) ~= nil and tonumber(arg[2]) <= 50 then
@@ -576,7 +738,11 @@ end
 tfm.exec.setRoomMaxPlayers(25)
 
 function eventNewGame(name)
+    clearMapLock()
     isBonusTaken = false
+    roundEnded = false
+    warning1Sent = false
+    warning2Sent = false
     xLeftWalls = 4 --x1
     widthLeftWalls = 4 -- width
     xRightWalls = 796 --x
@@ -591,9 +757,11 @@ function eventNewGame(name)
     ui.removeTextArea(100, nil)
     ui.removeTextArea(1234,nil)
 
-    for _, name in pairs(banned) do
-        tfm.exec.freezePlayer(name)
-        tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", name)
+    for roomName in next, tfm.get.room.playerList do
+        if isBanned(roomName) then
+            tfm.exec.freezePlayer(roomName)
+            tfm.exec.chatMessage("<VI>[#Walls]<J> You have been banned and will be frozen each new game", roomName)
+        end
     end
 
     for i = 0, 12, 1 do
@@ -637,6 +805,20 @@ function eventTextAreaCallback(id, name, call)
         for i = 7, 12, 1 do
             ui.removeTextArea(i, name)
         end
+    elseif call == "closeBans" then
+        closeBanList(name)
+    elseif call:sub(1, 6) == "unban_" then
+        if not (mod[name] or adm[name]) then return end --only staff can unban, even via click
+        local banId = tonumber(call:sub(7))
+        for i, nick in ipairs(banned) do
+            if banInfo[nick] and banInfo[nick].id == banId then
+                table.remove(banned, i)
+                banInfo[nick] = nil
+                tfm.exec.chatMessage("<VI>[#Walls]<J> " .. nick .. " was unbanned.", name)
+                break
+            end
+        end
+        showBanList(name) --refresh the panel
     end
 end
 
@@ -654,10 +836,10 @@ function commandsHelp(name)
     local textArea_y = 50
     local textCommand = translate(name, "commands")
     local modCommandsMessage =
-    "<VI>Mod commands</VI> <br><br> <BV>!ban [player] [reason] or !unban [player or number] -</BV> <J>Ban or unban a player<br><br> (you can unban by player name, or use !banneds to see the list and unban by position).</J> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
+    "<VI>Mod commands</VI> <br><br> <BV>!ban [player] [reason] or !unban [player] -</BV> <J>Ban or unban a player<br><br> (unban by nick, e.g. Name#1234 or just Name; use !banneds to open the ban panel with ids, reasons and an unban button).</J> <br><br> <BV>!map or !map [mapcode] -</BV> <J>load a official random map or load one.</J><br><br> <BV>!kill [player] -</BV> <J>kills a player - must be only used as punishment.<br> <br>"
 
     local admCommandMessage =
-    "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [number 1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
+    "<R>Admin commands</R> -- <CH>You can scroll it</CH><br><br><BV>!map or !map [mapcode] -</BV><J> load an official random map or load one.</J><br><br><BV>!kill [player] -</BV><J> kills a player - must be only used as punishment.</J><br><br><BV>!freeze [player] -</BV><J> freezes a player.</J><br><br><BV>!size [player] [0.1 - 5] or [random] -</BV><J> gives the player a random or a given size.</J><br><br><BV>!ms -</BV><J> Chat message</J><br><br><BV>!maxplayers [1 - 50] -</BV><J> set max players in the room.</J><br><br><BV>!respawn [player] -</BV><J> respawn a player.</J><br><br><BV>!time [number] -</BV><J> change maps time.</J><br><br><BV>!link or !unlink [player1] [player2] -</BV><J> link or unlink two player.<br><br>"
 
     ui.addTextArea(7, "", name, 235, 50, 320, 320, 0x073247, 0x121212, 1, true)
     ui.addTextArea(8, "<p align='center'><a href='event:Helps'><font size ='14' color='#00C17C'>Help<b>", name, 320,textArea_y, nil, nil, 0x073247, 0x121212, 1, true)
